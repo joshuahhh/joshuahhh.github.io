@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<title>How Bodies Matter poster</title>
+<script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Helvetica;
+  }
+
+  h1 {
+    font-family: Avenir Next;
+    font-size: 50px;
+  }
+
+  .row {
+    display: flex;
+    margin: 0 -10px;
+  }
+
+  .row > div {
+    margin: 0 10px;
+  }
+
+  @media only screen and (max-width: 760px) {
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+</style>
+
+<div style="margin: 10px auto; max-width: 760px;">
+
+<h1>
+  How Bodies Matter
+  <span style="font-weight: 400;">
+    (the poster)
+  </span>
+</h1>
+
+<div class="row">
+  <div>
+    <img src="photo-small.jpg" width="400" />
+  </div>
+  <div>
+    <p>Scott R. Klemmer &amp; friends wrote a paper, <a href="https://hci.stanford.edu/publications/2006/HowBodiesMatter-DIS2006.pdf">How Bodies Matter</a>, which surveys the ways that embodiment plays into interaction design. To encourage conversation around the paper in my research group, I formatted its text into a poster.</p>
+
+    <p>Download: <a href="poster.pdf">PDF</a>, <a href="poster.html">HTML</a></p>
+
+    <p style="font-size: 50%">(Render HTML to PDF with <span style="font-family: monospace">wkhtmltopdf --page-width 560 --page-height 880 poster.html poster.pdf</span>.)</p>
+
+  </div>
+</div>
+
+<div class="footer">
+  <a href="/">Joshua Horowitz</a>
+</div>
+
+</div>

@@ -1,0 +1,3 @@
+[submodule "projects/scratchbar"]
+	path = projects/scratchbar
+	url = https://github.com/joshuahhh/scratchbar

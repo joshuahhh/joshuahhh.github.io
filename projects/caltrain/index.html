@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Caltrain Camera Array</title>
+<script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
+<style>@import url(style.css);</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.imagesloaded.js"></script>
+<script type="text/javascript" src="js/refocus.js"></script>
+<script type="text/javascript" src="js/coffee-script.js"></script>
+<script type="text/coffeescript">
+
+$ ->
+  files1 = for num in range(0,33.5,1)
+    "img/peri#{pad(num, 4)}.jpg"
+  refocus1 = refocus(files1, "#container1")
+  files2 = for num in range(20,446,5)
+    "img/focus#{pad(num, 4)}.jpg"
+  refocus2 = refocus(files2, "#container2")
+
+  progressMonitor = setInterval (->
+    num_loaded = refocus1.numImgLoaded() + refocus2.numImgLoaded()
+    num_total  = refocus1.numImgTotal()  + refocus2.numImgTotal()
+    $("#progress").val(num_loaded / num_total * 100)
+    if num_loaded == num_total
+      $("#go").click ->
+        $("#info-mode").css("z-index", "0")
+      $("#go").removeAttr('disabled')
+    ), 100
+
+  $('#selector input').change ->
+    if $(this).val() == 'Peripheral'
+      $('#container1').css('z-index', 2)
+    else
+      $('#container1').css('z-index', 0)
+
+  $("#info-link").click ->
+    $("#info-mode").css("z-index", "2")
+
+</script>
+</head>
+
+<body style="margin:0">
+<div id="view-mode" style="position:absolute; width:100%; height:100%; cursor:crosshair; overflow:hidden; z-index:1; background-color:white;">
+  <div id="selector">
+    <input type="radio" name="modes" value="Peripheral" id="mode-peripheral" checked />
+    <label for="mode-peripheral">Peripheral</label>
+    <input type="radio" name="modes" value="Refocusable" id="mode-refocusable">
+    <label for="mode-refocusable">Refocusable</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hint: Move your mouse in all directions.
+  </div>
+  <div id="container-container" style="position:relative">
+    <div id="container1" style="position:absolute; z-index:2"></div>
+    <div id="container2" style="position:absolute; z-index:1"></div>
+  </div>
+  <div id="float" style="position:absolute; right:10; top:10; cursor:pointer; z-index:3">
+    <img id="info-link" src="question_mark.png" alt="Information"/>
+  </div>
+</div>
+<div id="info-mode" style="position:absolute; width:100%; height:100%; z-index:2; background-color:white;">
+  <div id="info" style="margin-top:40px; margin-left:100px; width:720px">
+
+<a href="../../" rel="author">Joshua Horowitz</a>
+<h1>Caltrain Camera Array</h1>
+
+<p>Shooting a cell-phone video out of the window of <a href="http://en.wikipedia.org/wiki/Caltrain">Caltrain</a>, I inadvertantly created a miles-long camera array (like <a href="http://en.wikipedia.org/wiki/Lytro">Lytro</a>, but bigger). Using the information contained in these video frames, I constructed new panoramic perspectives on the landscape passing by, slicing and rearranging rays of light into impossible projections.
+
+<p>This page features two demonstrations of this idea. I hope you enjoy playing with them.
+
+<p>Progress loading images: <progress id="progress" value="" max="100"></progress> <button id="go" disabled="disabled">Ready!</button> (97MB total)
+
+<h2>Contact</h2>
+
+Feel free to contact me at <a href="mailto:joshuah@alum.mit.edu">joshuah@alum.mit.edu</a> &mdash; I would appreciate any comments / questions / suggestions / bug reports / etc.
+
+</div>
+</div>
+</body>
+</html>

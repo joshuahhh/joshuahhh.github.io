@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:maps="com.google.maps.*" xmlns:ui.map="ui.map.*"
+	       width="100%" height="100%">
+	<maps:Map
+		id="gMap"
+    	key="ABQIAAAAFgNnymH0g2VMVXoHDsCvkhR2x1hyvL-NzOMzjmfrOCV-3yP2MhS0FdikTsIohXPwV4WPQ3-RaSDy-g"
+    	mapevent_mappreinitialize="onMapPreinitialize(event)"
+    	mapevent_mapready="onMapReady(event)"
+    	width="100%" height="100%"/>
+    <ui.map:ShowingControl horizontalCenter="0" bottom="0" id="showingControl"/>
+    <mx:Button right="0" bottom="0" id="addLoc" label="New Location" click="handleAddLoc()"/>
+
+	<mx:Script>
+	  <![CDATA[
+	  	import mx.collections.ArrayCollection;
+	  	import model.*;
+	  	import com.google.maps.*;
+    	import com.google.maps.controls.*;
+    	import com.google.maps.overlays.*;
+    	import com.google.maps.MapMoveEvent;
+    	import com.google.maps.MapMouseEvent;
+	  	import ui.WikiBrowser;
+	  	import mx.binding.utils.ChangeWatcher;
+	  	import mx.managers.PopUpManager;
+	  	
+		public var browser:WikiBrowser;
+		public var _wiki:Wiki;
+		public var locations:ArrayCollection = new ArrayCollection();
+		
+		private function onMapPreinitialize(event:Event):void {
+        	var myMapOptions:MapOptions = new MapOptions();
+        	myMapOptions.zoom = 14;
+        	myMapOptions.center = new LatLng(42.373611, -71.110556);
+        	myMapOptions.mapType = MapType.NORMAL_MAP_TYPE;
+        	gMap.setInitOptions(myMapOptions);
+        }
+    
+    	private function onMapReady(event:Event):void {
+      		// map.addEventListener(MapMoveEvent.MOVE_END, onMapMoveEnd);
+        	
+        	gMap.addControl(new ZoomControl());
+			gMap.addControl(new PositionControl());
+  			// map.addControl(new MapTypeControl());
+        
+        	var latlng:LatLng = new LatLng(42.33617, -71.10880);
+        	var marker:Marker = new Marker(latlng);
+        	gMap.addOverlay(marker);
+        	
+        	showingControl.addEventListener('selection_change', function(event:Event):void {
+        		trace('RECEIVED selection_change');
+				filterLocations();
+			});
+			
+			filterLocations();
+    	}
+    	
+    	public function set wiki(wiki:Wiki):void {
+    		trace("WikiMap's wiki set");
+			if(wiki) {
+				_wiki = wiki;
+			 	wiki.addEventListener("add", onWikiAdd);
+			}
+    	}
+    	
+    	private function handleAddLoc():void {
+    		//this.addEventListener(MouseEvent.CLICK, addLocDialog);
+    		gMap.addEventListener(MapMouseEvent.CLICK, addLocDialog);
+   		}
+    	
+    	private function addLocDialog(event:MapMouseEvent):void {
+    		gMap.removeEventListener(MapMouseEvent.CLICK,addLocDialog);
+    		var latlng:LatLng = event.latLng;
+            var win:CreateDialog = PopUpManager.createPopUp(this, CreateDialog, true) as CreateDialog;
+        	win.wikiSet(_wiki);
+        	win.mapSet(gMap,latlng);
+        	PopUpManager.centerPopUp(win);
+        }
+ 
+    	public function onWikiAdd(event:WikiEvent):void {
+    		trace("WikiMap's onWikiAdd");
+    		var page:WikiPage = event.page;
+    		if(page.loc) {
+    			trace("LOCATED");
+    			if(page is WikiArticle) {
+    				trace("ARTICLE");
+    				
+					var article:WikiArticle = WikiArticle(page);
+					var labelFormat:TextFormat = new TextFormat();
+					labelFormat.size = "20";
+					var marker:WikiMapLocation = new WikiMapLocation(article.loc, new MarkerOptions({
+							label: "\n" + article.title,
+							// tooltip: article.title,
+							labelFormat: labelFormat}),
+							article);
+					marker.visible = showingControl.getCurrentFilter().isVisible(article);
+					gMap.addOverlay(marker);
+					marker.addEventListener(MapMouseEvent.CLICK, function(event:MapMouseEvent):void {
+						browser.load(page);
+					});
+					locations.addItem(marker);
+					
+					filterLocations();
+				}
+			}
+		}
+		
+		public function filterLocations():void {
+			trace('FILTERING LOCATIONS');
+			var curFilter:MapFilter = showingControl.getCurrentFilter();
+			for each(var location:WikiMapLocation in locations) {
+				location.visible = curFilter.isVisible(location.page);
+				trace('Giving ' + location.page.getCode() + ' visibility ' + curFilter.isVisible(location.page)); 
+			}
+		}
+     
+    	/*private function onMapMoveEnd(event:MapMoveEvent):void {
+        	// map.openInfoWindow(map.getCenter(), new InfoWindowOptions({title: "Move Event", content: "MAP_MOVE_END generated on Map"}));
+    	}*/
+	  ]]>
+	</mx:Script>
+</mx:Canvas>

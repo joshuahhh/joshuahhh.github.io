@@ -1,0 +1,58 @@
+/* shamelessly ripped off from http://bost.ocks.org/mike/style.css */
+
+html, body {
+  height: 100%;
+}
+
+html {
+  min-width: 1040px;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  /* margin: 1em auto 4em auto; */
+  position: relative;
+  /* width: 960px; */
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  margin: .3em 0 .1em 0;
+}
+
+h2 {
+  margin-top: 2em;
+}
+
+h1, h2 {
+  text-rendering: optimizeLegibility;
+}
+
+h2 a {
+  color: #ccc;
+  left: -20px;
+  position: absolute;
+  width: 740px;
+}
+
+body > p, li > p {
+  line-height: 1.5em;
+}
+
+body > p {
+  width: 720px;
+}
+
+li {
+  width: 680px;
+}
+
+a {
+  color: steelblue;
+}
+
+a:not(:hover) {
+  text-decoration: none;
+}

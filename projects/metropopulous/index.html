@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Ranking America's Metropolises</title>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="waypoints.js"></script>
+    <script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
+    <style type="text/css">
+
+@import url("style.css");
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id='details' style='position:fixed; top:130px; right:140px'>
+      <div id='maps' style='position:relative; height:300px'>
+	<img id='map' src="" style="position:absolute; left:0; top:0"/>
+	<img id='overlay1' src="" style="position:absolute; left:0; top:0"/>
+	<img id='overlay2' src="" style="position:absolute; left:0; top:0"/>
+      </div>
+      <h2 id='city-name'></h2>
+      <div id='stats'></div>
+    </div>
+    <div id='top-matter' style='width:50%'>
+    <a href="../..">Joshua Horowitz</a>
+    <h1>Ranking America's Metropolises</h1>
+    <p><b>What are the most populous cities in the United States?</b> The <a href="http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population">standard list</a> ranks cities according to population within city limits, but city limits are often little more than arbitrarily drawn accidents of history. This measure distorts our understanding of cities as experienced by their inhabitants.</p><p>Instead, we ask how many people live within various distances of the city center. Each distance produces its own ranking, corresponding to a different concept of "city". None of them reproduce the naïve "city limits" ranking.</p><p>(Please contact me at <a href="mailto:joshuah@mit.edu">joshuah@mit.edu</a>.)</p>
+    </div>
+    <div id='labels-and-chart'>
+    <div id='labels-holder'>
+      <div id='labels' style='background-color:rgba(255,255,255,0.95); margin:0px; padding:0px;'> </div>
+    </div>
+    <div id='chart'> </div>
+    </div>
+
+    <script src='cities.js' type='text/javascript'> </script>
+  </body>
+</html>

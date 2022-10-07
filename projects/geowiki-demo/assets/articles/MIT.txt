@@ -1,0 +1,3 @@
+<img src="assets/images/mit-campus-view.png" align="right"/>
+
+MIT is a cool place for people who like to <ul><li>Hack</li><li>Not sleep</li><li>UI-design</li></ul>

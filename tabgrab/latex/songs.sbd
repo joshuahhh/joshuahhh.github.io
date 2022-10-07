@@ -1,0 +1,1229 @@
+% Copyright (C) 2013 Kevin W. Hamlen
+%
+% This program is free software; you can redistribute it and/or
+% modify it under the terms of the GNU General Public License
+% as published by the Free Software Foundation; either version 2
+% of the License, or (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program; if not, write to the Free Software
+% Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+% MA  02110-1301, USA.
+%
+% The latest version of this program can be obtained from
+% http://songs.sourceforge.net.
+
+\noversenumbers
+\newchords{chorus}
+\newchords{verse}
+
+\beginsong{Absolutely Cuckoo}
+\beginverse
+Don't fall in love with me \[E]yet
+We only recently \[B]met
+True I'm in love with you \[F#]but
+you might decide I'm a \[B]nut
+\replay
+Give me a week or two ^to
+go absolutely cuc^koo
+then, when you see your er^ror,
+then, you can flee in ter^ror
+\replay
+like everybody else ^does
+I only tell you this ^cause
+I'm easy to get rid ^of
+but not if you fall in ^love
+\replay
+Know now that I'm on the ^make
+and if you make a mis^take
+my heart will certainly ^break
+I'll have to jump in a ^lake
+\replay
+and all my friends will blame ^you
+There's no telling what they'll ^do
+It's only fair to tell ^you
+I'm absolutely cuc^koo
+\endverse
+\endsong
+
+\beginsong{I Don't Belive In The Sun}
+\beginverse
+They \[F#]say there's a sun in the \[B]sky
+but \[C#]me, I can't imagine \[F#]why
+There \[B]might have been one
+be\[C#]fore you were gone
+but \[D#m]now all I \[C#]see is the \[B]night, so
+\endverse
+
+\beginchorus
+\[F#]I don't be\[B]lieve in the \[C#]sun \[B]
+\[F#]How could it \[B]shine down on \[D#m]every\[C#]one
+\[B] and \[F#]never shine on \[C#]me
+\[B] \[F#]How could there \[C#]be
+\[B] \[F#]such cruel\[C#]ty.
+\endchorus
+
+\beginverse
+The ^only sun I ever ^knew
+was the ^beautiful one that was ^you
+Since ^you went away
+it's ^nighttime all day
+and it's ^usual^ly raining ^too (C)
+\endverse
+
+\beginverse
+\memorize
+The \[B]only \[F#]stars there \[C#]really \[F#]are
+were \[B]shining \[F#]in your \[C#]eyes
+\replay
+There ^is no ^sun ex^cept the ^one
+that ^never shone ^on other ^guys
+\replay
+The ^moon to ^whom the ^poets ^croon
+has ^given ^up and ^died
+Astronomy will have to be revised (C) 
+\endverse
+\endsong
+
+\beginsong{All My Little Words}
+\beginverse
+You are a splendid butter\[A&]fly
+It is your wings that make you \[Fm]beautiful
+and I could make you fly a\[E&]way
+\[D&] but I could never make you \[A&]stay
+\endverse
+\beginverse
+You said you were in love with ^me
+Both of us know that that's im^possible
+and I could make you rue the ^day
+^ but I could never make you ^stay
+\endverse
+\beginchorus\memorize[chorus]
+Not for all the tea in \[E&]China
+\[D&] not if I could sing like a \[A&]bird
+\replay[chorus]
+not for all North Caro^lina
+^ not for all my little ^words
+\replay[chorus]
+not if I could write for ^you
+^ the sweetest song you ever ^heard
+\replay[chorus]
+It doesn't matter what I ^do
+^ not for all my little ^words.
+\endchorus
+\beginverse
+Now that you've made me want to ^die
+you tell me that you're unboy^friendable
+and I could make you pay and ^pay
+^ but I could never make you ^stay (C)
+\endverse
+\endsong
+
+\beginsong{A Chicken with Its Head Cut Off}
+\beginverse
+\[G]Eligible, \[D]not too stupid,
+in\[F]telligible and \[C]cute as Cupid,
+\replay
+^knowledgeable, but ^not always right,
+^salvageable and ^free for the night
+\endverse
+\beginchorus
+Well my \[G]heart's running round
+like a chicken with its head cut o\[C]ff
+all a\[D]round the barnyard
+falling \[C]in and out of \[G]love
+The \[C]poor \[D]thing's \[G]blind as a bat
+getting up, falling down, getting \[C]up
+Who'd \[D]fall in love with a \[C]chicken
+with its head cut o\[G]ff? (Whoa, Nellie) \[C] \[D] 
+\endchorus
+\beginverse
+^My wife doesn't ^understand me
+^Many dozens ^hope to land me
+\replay
+^I'm for free love, and ^I'm in free fall
+^This could be love or ^nothing at all (C)
+\endverse
+\beginverse
+% CORRECTION: whole bridge
+We don't \[C]have to \[D]be \memorize \[C]stars
+explo\[G]ding in the ni\[D]ght
+or e\[G]lectric eels under the \[Em]covers
+We don't \[C]have to be
+\[D]anything quite so un\[G]real
+Let's just be \[Em]lovers (C)
+\endverse
+\beginverse
+(It ain't pretty)\[C]  \[D] \[G]
+\endverse
+\endsong
+
+\beginsong{Reno Dakota}
+\beginverse
+{\footnotesize\begin{verbatim}
+  G      D       C    
+E-----------------------
+B--3-3-3----------------
+G-0-0-0---2-2-2---0-0-0-
+D--------0-0-0----------
+A----------------3-3-3--
+E-----------------------
+\end{verbatim}}
+\endverse
+\beginverse
+\[G]Reno Dakota there's not an iota
+of kindness in \[D]you
+You know you enthrall me
+and yet you don't call me
+It's making me \[G]blue
+Pantone 292
+\endverse
+\beginverse
+^Reno Dakota I'm reaching my quota
+of tears for the ^year
+Alas and alack
+you just don't call me back
+You have just disap^peared
+It makes me drink beer
+\endverse
+\beginverse
+I \[C]know you're a recluse
+You know that's no excuse
+Re\[G]no that's just a \[D]ruse
+Do not \[G]play fast and \[D]loose
+with my \[G]heart
+\endverse
+\beginverse
+^Reno Dakota I'm no Nino Rota
+I don't know the ^score
+Have I annoyed you
+or is there a boy who
+Well he's just a ^whore
+I've had him before
+It makes me drink more
+% TODO: ending?
+\endverse
+\endsong
+
+\beginsong{I Don't Want To Get Over You}
+\beginverse
+I don't want to get \[C]over \[G]you
+I guess I could take a \[C]sleeping \[G]pill
+and \[C]sleep at w\[G]ill
+and not have to go \[D]through
+what I go through
+I guess I should take \[C]Prozac, r\[G]ight,
+and just \[C]smile all n\[G]ight
+at somebody \[D]new
+Somebody \[Am]not too \[Bm]bright but \[C]sweet and \[D]kind
+who would \[Am]try to \[Bm]get you \[C]off my \[D]mind
+I could \[Am]leave this \[Bm]ago\[C]ny be\[D]hind
+which is \[C]just what I'd \[D]do
+if \[C]I wanted \[D]to
+but I don't want to get \[C]over \[G]you
+\endverse
+\beginverse
+cause I don't want to get ^over ^love
+I could listen to my ^thera^pist,
+pretend you ^don't ^exist,
+and not have to dream ^of
+what I dream of
+I could listen to ^all my ^friends
+and go ^out ^again
+and pretend it's e^nough
+or I could ^make a ca^reer of ^being ^blue
+I could ^dress in ^black and ^read ^Camus
+smoke ^clove ciga^rettes and ^drink ^vermouth
+like I ^was seven^teen
+that ^would be a ^scream
+but I don't want to get ^over ^you
+\endverse
+\endsong
+
+\beginsong{Come Back from San Francisco}
+\beginverse
+Come \[D]back from San Francisco
+It \[G]can't be \[A]all that pretty
+when \[G]all of \[A]New York City \[D]misses you
+\replay
+Should ^pretty boys in discos
+di^stract you ^from your novel
+re^member ^I'm awful in ^love with you
+\endverse
+\beginchorus
+\[G]You need \[A]me like the \[G]wind
+needs the \[A]trees to blow \[G]in
+Like the \[A]moon needs poe\[G]try
+you need \[A]me
+\endchorus
+\beginverse
+Come ^back from San Francisco
+and ^kiss me, ^I've quit smoking
+I ^miss do^ing the wild thing ^with you
+\replay
+Will ^you stay, I don't think so
+but ^all I ^do is worry
+Pack ^bags, call ^cabs and hurry
+^home to me (C) (C)
+% TODO: better (C) business
+\endverse
+\beginverse
+\[D]When \[A]you be\[G]tray me
+betray me \[D]with a kiss
+\replay
+^Damn ^you
+I've ^never stayed up as ^late as this
+\endverse
+\endsong
+
+\beginsong{The Luckiest Guy on the Lower East Side}
+\beginverse
+\[B]Andy would bicycle across \[E]town
+in the rain to bring you \[B]candy
+and John would buy the \[E]gown
+for you to wear to the \[B]prom
+with Tom the as\[E]tronomer
+who'd name a star for \[F#]you
+\endverse
+\beginchorus
+\memorize[chorus]
+But I'm the luckiest \[B]guy
+on the Lower East \[G#m]Side
+cause \[E]I've got wheels
+and \[F#]you want to go for a \[B]ride.
+\endchorus
+\beginverse
+\[B]Harry is the one I think you'll \[E]marry
+but it's \[B]Chris that you kissed
+after \[F#]school
+well I'm a \[B]fool, there's no doubt
+but \[E]when the sun comes out
+and only \[F#]when the sun comes out (C)
+\endverse
+\beginverse
+\memorize
+\[F#] The day is \[E]beautiful \[B] and so are \[F#]you
+\replay ^ My car is ^ugly but then ^ I'm ugly ^too
+\replay ^ I know you'd ^never give me ^ a second ^glance
+\replay but when the ^weather's nice all the ^other guys ^ don't stand a ^chance
+\endverse
+\beginverse
+I \[B]know Professor Blumen
+makes \[E]you feel like a woman
+but \[B]when the wind is in your hair
+you \[E]laugh like a little girl
+So you \[B]share secrets with Lou
+but \[E]we've got secrets too
+Well, \[F#]one: I only \[E]keep this heap for \[F#]you
+\endverse
+\beginchorus
+\replay[chorus]
+cause I'm the ugliest ^guy
+on the Lower East ^Side
+but ^I've got wheels
+and ^you want to go for a \[B]ride
+% TODO: next line
+Want to go for a ride? {\nolyrics \[G#m] \[E] \[F#] \[B]} (x3)
+\endchorus
+\endsong
+
+\beginsong{Let's Pretend We're Bunny Rabbits}
+\beginverse
+If you \[A]knew how I \[F#m]long
+for you \[A]now that you're \[D]gone \[C#m] 
+\[Bm]you'd grow wings and \[E]fly
+home to \[A]me
+home to\[F#m]night
+and \[A]in the morning \[D]sun \[E] 
+\endverse
+\beginchorus
+\memorize[chorus]
+Let's pretend we're \[A]bunny rabbits
+Let's do it \[F#m]all day long
+Let abbots, Bab\[D]bitts and Cabots
+say Mother \[E]Nature's wrong
+\replay
+and when we've had a ^coupla beers
+we'll put on ^bunny suits
+I long to ^nibble your ears
+and do as ^bunnies do
+\endchorus
+\beginverse
+{\nolyrics Interlude: \[A] \[F#m] \[A] \[D] \[C#m] \[Bm] \[E]}
+\endverse
+\beginchorus
+\replay[chorus]
+Let's pretend we're ^bunny rabbits
+Let's do it ^all day long
+rapidly be^coming rabid
+singing little ^rabbit songs
+\replay
+I can keep it ^up all night
+I can keep it ^up all day
+Let's pretend we're ^bunny rabbits
+until we ^pass away
+\replay
+{\nolyrics ^ ^}
+Let's pretend we're ^bunny rabbits
+until we ^pass away
+\endchorus
+\endsong
+
+\beginsong{The Cactus Where Your Heart Should Be}
+\beginverse
+{\footnotesize\begin{verbatim}
+   G#m   B     F#          E     F     F#    D#
+E----4-----7-----6-----2-----0-----1-----2-----3----
+B----4-----7-----7-----2-----0-----1-----2-----4----
+G---4-----8-----6------3----1-----2-----3-----3-----
+D--6---6-9---9-8---8--4----2---2-3---3-4---4-5---5--
+A--------------------4---4--------------------------
+E--------------------------------------------------- 
+\end{verbatim}}
+\endverse
+\beginverse
+The \[G#m]cactus \[B]where your \[F#]heart should be
+has \[E]lovely \[F]little \[F#]flowers \[D#]
+\replay
+so ^though it's ^always ^pricking me
+my ^ardor ^never ^sours ^
+\endverse
+\beginverse
+\replay
+The ^cactus ^where your ^heart once was
+has ^power to ^rend and ^flay ^
+\replay
+I ^stick be^cause I'm ^stuck, because
+I ^just can't ^tear my^self a^way
+\endverse
+\endsong
+
+\beginsong{I Think I Need a New Heart}
+\beginverse
+\[Em]Time \[C]stands \[G]still
+All I can \[D]feel is the
+\[Em]time \[C]standing \[G]still
+as you \[D]put down the \[Am]keys
+and say \[C]don't \[G]call me \[D]please
+while the \[C]radio plays
+\endverse
+\beginchorus
+\memorize[chorus]
+``I Think I Need a New \[G]He\[C]ar\[G]t" oh\[D]hh
+``I Think I Need a New \[G]He\[C]ar\[G]t" oh\[D]hh
+\endchorus
+\beginverse
+^You've ^lied ^too
+but it's a ^sin that I
+^can't ^tell the ^truth
+cause it ^all comes out ^wrong
+un^less I put ^it in a ^song
+so the ^radio plays
+\endverse
+\beginchorus
+\replay[chorus]
+``I Think I Need a New ^He^ar^t" just for ^you
+``I Think I Need a New ^He^ar^t" ^
+\endchorus
+\beginverse
+\memorize
+cause I \[C]always say I \[G]love you
+when I \[D]mean turn out the \[G]light
+\replay
+and I ^say let's run a^way
+when I ^just mean stay the ^night
+\replay
+but the ^words you want to ^hear
+you will ^never hear from ^me
+\memorize
+I'll never \[C]say ``\[G]happy anniversa\[D]ry"
+\replay
+never ^stay to say ``^happy anniversa^ry"
+\endverse
+\beginchorus
+\replay[chorus]
+so I think I need a new ^he^ar^t oh^hh
+I think I need a new ^he^ar^t oh^hh
+\replay
+I think I need a new ^he^ar^t oh^hh
+I think I need a new ^he^ar^t oh^hh
+% TODO: next line
+Give me time
+\endchorus
+\endsong
+
+\beginsong{The Book of Love}
+\beginverse
+Notes in parentheses are not played in the intro
+{\scriptsize\begin{verbatim}
+E----------------------------------
+B----------------------------------
+G----4---5-------------------------
+D----5---5-----------4---5---------
+A--------------------5---5---------
+E--3---3--(3)-(3)--3---3--(3)-(3)--
+\end{verbatim}}
+\endverse
+\beginverse
+\[G] The book of \[C]love is \[D]long and \[G]boring
+\replay ^ No one can ^lift the ^damn thing ^
+\replay ^ It's full of ^charts and ^facts and ^figures
+\replay ^ and in^structions for ^dancing ^
+\replay but ^I ^ ^ ^
+\replay ^ I love it ^when you ^read to ^me
+\replay and ^you ^ ^ ^
+\replay ^ you can ^read me ^any^thing
+\endverse
+\beginverse
+\replay ^ The book of ^love has ^music ^in it
+\replay ^ In fact that's ^where mu^sic comes ^from
+\replay ^ Some of it ^is just ^transcen^dental
+\replay ^ Some of it ^is just ^really ^dumb
+\replay but ^I ^ ^ ^
+\replay ^ I love it ^when you ^sing to ^me
+\replay and ^you ^ ^ ^
+\replay ^ you can ^sing me ^any^thing
+\endverse
+\beginverse
+\replay ^ The book of ^love is ^long and ^boring
+\replay ^ and written ^very ^long a^go
+\replay ^ It's full of ^flowers and ^heart-shaped ^boxes
+\replay ^ and things we're ^all too ^young to ^know
+\replay but ^I ^ ^ ^
+\replay ^ I love it ^when you ^give me ^things
+\replay and ^you ^ ^ ^
+\replay ^ you ought to ^give me ^wedding ^rings
+\replay ^I ^ ^ ^
+\replay ^ I love it ^when you ^give me ^things
+\replay and ^you ^ ^ ^
+\replay ^ you ought to ^give me ^wedding ^rings
+\endverse
+\endsong
+
+\beginsong{Fido, Your Leash is Too Long}
+% TODO: this
+\beginverse
+\[A]Fido, your \[G]leash is too \[D]long
+You go where you don't belong
+You've been digging in the rubble
+getting bitches in trouble
+Fido, your leash is too long
+\endverse
+\beginverse
+Fido, your leash is too long
+I don't know where I went wrong
+You scare me out of my wits
+when you do that Shitzu
+Fido, your leash is too long
+\endverse
+\beginverse
+Fido, you've gone far enough
+I must have all of your love
+You've just run out of luck
+I don't care what you foxhounds do
+but your leash is too long 
+\endverse
+\endsong
+
+
+\beginsong{How Fucking Romantic}
+\beginverse
+\chordsoff
+How fucking romantic
+All the stars are out
+twinkling twinkling twinkling
+and fluttering about
+What a tacky sunset
+What a vulgar moon
+Play another charming
+Rodgers \& Hart tune
+How fucking romantic
+Must we really waltz
+Drag another cliche
+howling from the vaults
+Love you, obviously,
+like you really care,
+even though you treat me
+like a dancing bear
+Toss your bear a goldfish
+as it cycles by
+Don't forget to feed your bear
+or it'll die 
+\chordson
+\endverse
+\endsong
+
+\beginsong{The One You Really Love}
+\beginverse
+I do be\[A&]lieve our love's in \[E&]danger
+I might as \[B&m]well be loving \[E&]air
+\replay
+You look at ^me like I'm a ^stranger
+You look at ^me like I'm not ^there
+\endverse
+\beginchorus
+\memorize[chorus]
+I gaze in\[D&]to your eyes of \[A&]blue
+but their beau\[E&]ty is not for \[A&]me
+\replay[chorus]
+You're thinking ^on someone who's ^gone
+You're dreaming ^of the one you ^really love
+You're dreaming \[E&]of the [one/corpse] you \[A&]really love.
+\endchorus
+\beginverse
+I made you ^mine, or so it ^seemed
+Though he is ^dead he haunts your ^dreams
+\replay
+I might as ^well be two feet ^tall
+You never ^will love me at ^all (C) (C)
+\endverse
+\endsong
+
+\beginsong{Punk Love}
+\beginverse
+\[F]Love love \[E&]
+\[F]Punk rock love punk \[B&]love punk rock 
+\endverse
+\endsong
+
+\beginsong{Parades Go By}
+\beginverse
+\[C] I'll linger here
+your ring upon my\[B&] finger dear and sing till dawn
+a \[F]song of you and me and what and \[C]why
+for time is all I have to keep
+be\[B&]tween these walls and half asleep
+\endverse
+\beginchorus
+The \[C]days go by
+a million little nights and \[B&]days go by \echo{skip 3$^\textrm{rd} \times$}
+and \[C]I don't mind  Parades go by
+So many beautiful pa\[B&]rades go by \echo{skip 3$^\textrm{rd} \times$}
+Leave \[C]me behind.
+\endchorus
+\beginverse
+I'll sit and stare
+how could I venture anywhere
+and let the centuries fall where they may
+but never die
+for I have loved
+and so I lost the world above
+beyond the moss (C)(C) 
+\endverse
+\endsong
+
+\beginsong{Boa Constrictor}
+\beginverse
+{\footnotesize\begin{verbatim}
+E-----3-----------------------3----------------------
+B---------5--5-7-8-7-5-----------------------5-------
+G--4-5-4---7--77-7-7-5-5---4-5-4--9-7-------5--7-5---
+D--5-5-5-7--7---5-5-5-5--5-5-5-5-7-9-795---5--5-5-5--
+A---5---55--------------7---5---59-A-9-7--7----------
+E-------------------------8--------------8-----------
+
+Or:
+
+E-----3---0--0-2-3-2-0--------3---0----------0-------
+B--0-1-0---3--33-3-3-1-1---0-1-0----3-------1--3-1---
+G--0-0-0-2--2---0-0-0-0--0-0-0-0-2-4-240---0--0-0-0--
+D---0---00--------------2---0---04-5-4-2--2----------
+A-------------------------3--------------3-----------
+E----------------------------------------------------
+\end{verbatim}}
+\endverse
+\beginverse
+I \[G]spend my \[D]eve\[C]nings   a\[G]lone
+talking \[C]to your \[G]picture, \[D]babe
+\[G]Love is \[D]wrapped a\[C]round my \[G]heart
+like a bo\[D]a constrictor, \[C]babe
+\endverse
+\beginverse
+My ^mother ^should have ^murdered ^me
+What jury ^would con^vict her, ^babe
+for ^love is ^wrapped a^round my ^heart
+like a bo^a constrictor, ^babe
+{\nolyrics \[E]}
+\endverse
+\endsong
+
+\beginsong{A Pretty Girl is Like...}
+\beginverse
+{\footnotesize\begin{verbatim}   G           Am
+E--333333--33-3000000--00-0-
+B--300303--33-0100101--11-0-
+G--000000--00-0200202--22-0-
+D--000000--00-0222222--22-2-
+A--222222--22-2000000--00-0-
+E--333333--33-3000000--00-0-\end{verbatim}}
+\endverse
+\beginverse
+A \[G]pretty girl is like a minstrel \[Am]show
+It makes you laugh
+It makes you cry
+You \[G]go
+It just isn't the same on radi\[Am]o
+It's \[C]all about the \[G]makeup and the \[C]dancing
+and the \[D]Oh,
+\endverse
+\beginverse
+a ^pretty girl is like a violent ^crime
+If you do it wrong you could do ^time
+but if you do it right it is sub^lime
+\[Bm]I'm
+\endverse
+\beginverse
+\memorize[chorus]
+\[Am]so in love with \[C]you, girl,
+it's \[G]like I'm on the \[D]moon
+\replay[chorus]
+^I can't really ^breathe, but I ^feel light^er
+\endverse
+\beginverse
+A ^melody is like a pretty ^girl
+Who cares if it's
+the dumbest in the ^world
+It's all about the way that it un^furls
+A pretty girl is like a pretty \[G]girl
+\endverse
+\endsong
+
+\beginsong{My Sentimental Melody}
+\beginverse
+{\nolyrics Intro: \[C] \[G] \[Am] \[F] \[G]}
+\endverse
+\beginverse
+\memorize
+I'm a \[C]hopeless romantic
+You're a \[F]terrible flirt
+\[C]Cool and un\[G]fazed, you're \[B&]always   a\[F]mazed
+when someone gets \[G]hurt
+\endverse
+\beginverse
+I live ^on the blue planet
+that I ^saw in your eyes
+but ^now I can't ^stay
+^knowing it's ^made
+of beautiful ^lies
+\endverse
+\beginchorus
+But \[C]my sentimental melo\[Em]dy
+\[Am] like a long-lost lulla\[G]bye
+will \[F]ring in your \[Em]ears
+\[E]down through the \[Am]years
+\[F]bringing a \[G]tear to your \[C]eye \[G] 
+\endchorus
+\beginverse
+Love can ^kill people,
+can't it
+Well it ^still may kill me
+^Each drop of ^rain
+is a ^glass of cham^pagne
+It's sweet and it's ^free
+\endverse
+\beginverse
+When I ^drink I don't panic
+When I ^drink I don't die
+^When I'm far ^gone
+it's ^all just a ^song
+just beautiful ^lies (C)
+\endverse
+\endsong
+
+\beginsong{Nothing Matters When We're Dancing}
+\beginverse
+\[F]Dance with me \[C]my      \[B&]old friend
+once before we go
+Let's pretend this song won't end
+and we never have to go home
+and we'll \[Gm]dance among the chande\[C]liers
+\endverse
+\beginchorus
+\[F] And nothing matters when we're \[B&]dancing
+\[C] In tat or tatters you're en\[F]trancing
+Be we in Paris or in \[B&]Lansing
+\[C]nothing matters when we're \[F]dancing
+\[C]nothing matters when we're \[F]dancing.
+\endchorus
+\beginverse
+You've never been more beautiful
+your eyes like two full moons
+as here in this poor old dancehall
+among the dreadful tunes
+the awful songs we don't even hear (C) 
+\endverse
+\endsong
+
+\beginsong{Sweet-Lovin' Man}
+\beginverse
+\[A]There's an hour of \[G]sunshine
+for a \[A]million years of \[G]rain
+but some\[F#m]how that always \[D]seems to be e\[E]nough \[Esus4]
+When love falls from the sky
+nobody ever asks why
+You just take it or you leave it
+Where it was
+but there's \[Bm]just one kind of \[E]love
+you can spend your life dreaming of
+\endverse
+\beginchorus
+For the \[A]love of a \[G]sweet-lovin' \[D]man
+some have \[F#m]traveled \[E]far and \[D]wide
+some have \[F#m]given \[E]up and \[D]died
+For the love of a sweet-lovin' man
+some have broken down and cried
+some have turned to dust inside
+but I'll stay right here and hide
+in the \[A]arms of my \[G]sweet-lovin' \[A]man. \[G]
+\endchorus
+\beginverse
+Until you've had sweet lovin'
+there's no lovin' worth the name
+but you can go blind
+from crying all the time
+and who said life was easy
+and who said a man was fair
+Well I wish you well
+but keep your paws off mine
+You can't buy one at the mall
+but he'll come if you just call. (C)
+\endverse
+\beginverse
+{\nolyrics Bridge: \[Bm] \[E] \[Bm] \[E] \[Bm] \[E] \[Bm] \[E]}
+\endverse
+\beginchorus
+in the \[A]arms of my \[G]sweet-lovin' \[A]man \[G] 
+in the arms of my sweet-lovin' man 
+\endchorus
+\endsong
+
+\beginsong{The Things We Did and Didn't Do}
+\beginverse
+\[B]All the things I \[A]knew I didn't \[E]know and didn't want to know
+that you told me just to tell me later that you'd told me so
+Come flooding back to me now
+Come on
+Come flooding back to me now
+\endverse
+\beginverse
+All the things you said you'd never say and you said anyway
+The things we did and didn't do
+The things we did and didn't do
+come flooding back to me now 
+\endverse
+\endsong
+
+\beginsong{Roses}
+\beginverse
+\chordsoff
+Buy more stock in roses
+Millionaires will always woo
+Don't be shocked if roses
+make a millionaire of you
+\chordson
+\endverse
+\endsong
+
+\beginsong{Love is Like Jazz}
+\beginverse
+\chordsoff
+Love is like jazz
+You make it up as you go along
+and you act as
+if you really knew the song
+but you don't
+and you never will
+so you flaunt your mistakes
+and you make them until
+they were you
+Love is like jazz
+the same song a million times
+in different ways
+``Strange Fruit" with
+and without wind chimes
+It's divine
+It's asinine
+It's depressing
+and it's almost entirely
+window dressing
+but it'll do 
+\chordson
+\endverse
+\endsong
+
+\beginsong{When My Boy Walks Down the Street}
+\beginverse
+\[D]Grand  pi\[A]anos     \[C]crash  to\[G]gether
+\[D]when my \[A]boy walks \[G]down the \[D]street
+\[D]There are \[A]whole new \[C]kinds of \[G]weather
+\[D]when he \[A]walks with \[G]his new \[A]beat
+Everyone sings hallelujah
+when my boy walks down the street
+Life just kind of dances through ya
+from your smile down to your feet
+\endverse
+\beginchorus
+A\[D]mazing
+he's a \[G]whole new \[D]form of \[A]life
+blue eyes b\[D]lazing
+and he's \[A]going to be my \[D]wife. \[A] \[C] \[G] \[D] \[A] \[G] \[A] 
+\endchorus
+\beginverse
+The world does the hula-hula
+when my boy walks down the street
+Everyone thinks he's Petula
+so big and yet so petite
+Butterflies turn into people
+when my boy walks down the street
+Maybe he should be illegal
+He just makes life too complete (C)
+\endverse
+\beginverse
+\[G]Oh, shadows of \[D]echoes of \[A]memories \[C] 
+\[G]Oh, things that he \[D]brings that he found in the sea \[A] 
+Oh, shadows of echoes of memories of songs
+Oh, how could he know that it won't be long (C)
+\endverse
+\beginverse
+Grand pianos crash together
+when my boy walks down the street
+There are whole new kinds of weather
+when he walks with his new beat
+Everyone sings hallelujah
+when my boy walks down the street
+Life just kind of dances through ya
+from your smile down to your feet
+\endverse
+\endsong
+
+\beginsong{Time Enough for Rocking When We're Old}
+\beginverse
+There'll be \[B&]time enough for \[E&]rocking when we're \[B&]old
+We can rock all day in rocking chairs of gold
+but to\[E&]night I think I'd rather just go \[B&]dancing
+There'll be time enough for \[F]rocking when we're \[B&]old, my \[F]lo\[E&]ve \[F] \[B&]
+\endverse
+\beginverse
+There'll be time enough for talk in the nursing home
+Darling, time enough to write an epic poem
+but tonight I think I'd rather just go dancing
+There'll be time enough for talking in the home, my love
+\endverse
+\beginverse
+There'll be time enough for sleeping when we're dead
+You will have a velvet pillow for your head
+but tonight I think I'd rather just go dancing
+There'll be time enough for sleeping when we're dead, my love
+\endverse
+\beginverse
+There'll be time enough for sex and drugs in Heaven
+when our pheromones are turned up to 11
+but tonight I think I'd rather just go dancing
+There'll be time enough for sex and drugs in Heaven, my love
+and time enough for rocking when we're old
+\endverse
+\endsong
+
+\beginsong{Very Funny}
+\beginverse
+\[D]Everybody \[A]knows but \[G]me \[F#m]
+\[Em]when you go\[A] where   \[Em]you shouldn't b\[A]e
+Everybody knows but me
+where you go when you're feeling free
+\[Em]Everybody \[A]knows but m\[D]e \[A] \[G] \[F#m] \[Em] \[A]
+\endverse
+\beginverse
+So you go there for a laugh
+You just go to take photographs
+To believe that, I'd be daft
+but yes I think you go for a laugh
+And you sa\[D]y, I love you \[A]honey
+Very funny 
+\endverse
+\endsong
+
+\beginsong{Grand Canyon}
+\beginverse
+{\nolyrics \[D] \[G] \[D] \[G] \[D]}
+\endverse
+\beginverse
+If I \[D]was \[G]the Grand \[D]Canyon
+I'd echo eve\[G]rything you \[A]say
+\[G]but I'm \[D]just me
+I'm \[F#]only      \[G]me
+and \[D]you used to \[A]love me that \[G]way
+so you \[D]know how to \[A]love me that \[D]way
+\endverse
+\beginverse
+If I was Paul Bunyan
+I'd carry you so far away
+but I'm just me
+I'm only me
+and you used to love me that way
+so you know how to love me that way...
+\endverse
+\endsong
+
+\beginsong{No One Will Ever Love You}
+\beginverse
+\[Am] If you don't mi\[G]nd
+\[F] why don't you mind
+Where is your sense of indignation
+You are too kind
+Much too kind
+\[C]         Where is the m\[G]adness that you p\[F]romised me
+
+\[C]  Where is the d\[G]ream for which I p\[F]aid dear\[E]ly
+\endverse
+\beginverse
+When things go wrong I sing along
+It is the nature of the business
+But you're not here to make my sad songs more sincere
+No one will ever love you honestly
+No one will ever love you for your honesty
+No one will ever love you honestly
+No one will ever love you for your honesty
+\endverse
+\endsong
+
+\beginsong{If You Don't Cry}
+\beginverse
+{\nolyrics \[C] \[G] \[F] \[C] \[F] \[G]}
+\endverse
+\beginverse
+\memorize
+Softly the \[C]crystals \[G]falling on \[Dm]17th \[Em]Street
+do their \[Am]dance and \[F]die and are \[G]gone
+\[Em]Millions of \[C]crystal \[G]balls roll \[Dm]around your feet
+and \[Em]nothing gets \[G]done
+An \[C]hour goes by
+She doesn't \[F]
+\endverse
+\beginchorus
+If you don't \[Dm]cry \[F] it isn't \[C]love \[G] 
+If you don't \[Dm]cry \[F] then you \[G]just don't feel it \[C]deep enough
+\endchorus
+\beginverse
+Dying all ^day in ^thousands of ^little ways
+^Dancing ^alone and ^drinking a ^lot
+^Closing the ^clubs and ^haunting the ^cabarets
+^looking for ^what
+^Another five years off your ^life (C)
+\endverse
+\beginverse
+A \[C]year goes by
+She doesn't \[F] (C)
+\endverse
+\endsong
+
+\beginsong{You're My Only Home}
+\beginverse
+\[G] I will \[C]stay if you let me \[D]stay
+\[C] and I'll go if you let me \[Em]go
+\replay
+^ but I ^won't go far ^away
+^ because you're my only ^home
+\replay
+^ I will ^hide what you want ^hidden
+^ and I'll roam if you say ^roam
+\replay
+^ but I'd ^just as soon you ^didn't
+^ because you're my only ^home
+\endverse
+\beginverse
+\[G] When you \[C]cancel \[Em]dinner \[D]plans
+% TODO: check next lines
+\replay
+^ When you ^cross the street and you ^don't take my ^hand
+When you make impossible demands
+
+   Em            G    D
+I wish I didn't understand, but... 
+\endverse
+\endsong
+
+\beginsong{(Crazy for You But) Not That Crazy}
+\beginverse
+I \[E&]built a ship with \[A&]my own hands
+to \[E&]take us to the \[A&]moon
+I \[E&]took a pen in \[A&]my own hand
+and \[E&]wrote you a hundred \[A&]tunes
+\endverse
+\beginchorus
+Now I'm \[B&]crazy for you but \[A&]not that crazy \[E&] \[B&]
+I'm \[B&]crazy for you but \[A&]not that crazy.
+{\nolyrics {[ 3rd time: \[E&] \[B&] ]}}
+\endchorus
+\beginverse
+I pre^tended you were ^Jesus
+you were ^just dying to ^save me
+I ^stood beneath your ^window
+^with my uku^lele
+\replay
+I ^made my yard a ^playground
+just in ^case we had a ^baby (C)
+\endverse
+\beginverse
+I ^treated you like ^radium
+I ^treated you like ^God
+You ^were my glass men^agerie
+Did ^you not find that ^odd
+\replay
+I ^dwelt within and ^went without
+and ^broke my virgin ^flesh
+I per^formed acts of de^votion
+as ^if you were Ga^nesh, but (C)
+\endverse
+\endsong
+
+\beginsong{My Only Friend}
+\beginverse
+\[D&]Billie you're a \[E&]miracle
+and \[A&]God knows I need \[D&]one
+Sing me something \[E&]terrible
+that \[A&]even dawn may \[D&]come
+You and \[B&m]me, we don't be\[D&]lieve
+in happy \[E&]endings
+\endverse
+\beginchorus
+\[E&]Hey, Lady \[A&]Day,
+can you \[D&]save my life this \[E&]time
+^Can you cry so ^beautifully
+you ^make my troubles ^rhyme
+^Hey, Lady ^Day,
+can you ^save my life a^gain
+\[E&] My only \[A&]love has gone a\[D&]way
+Will you \[E&]be my only \[B&]friend.
+\endchorus
+\beginverse
+^Billie you're a ^genius
+e^nough to be a ^fool
+a ^fool to gamble ^everything
+and never know the ^rules
+Some of us can only live
+in songs of love and trouble
+Some of us can only live in bubbles (C)
+\endverse
+\endsong
+
+\beginsong{Promises of Eternity}
+\beginverse
+What if the \[F#]show couldn't go \[B]\[F#]\[C#]on
+What if we \[F#]all got \[C#]jobs
+and \[B]got to \[F#]bed before \[C#]dawn
+\replay
+What if Old ^Joe had to re^^^tire
+What if all the stage hands were let go or fired
+\endverse
+\beginverse
+That's \[C#]just like what the \[B]world would \[F#]be
+If \[C#]you fell out of \[B]love with me
+\endverse
+\beginchorus
+\memorize[chorus]
+I can't let this \[F#]happen to you
+Don't you let it \[B]happen to me
+What would our \[C#]friends and family \[B]say
+if they could \[F#]only see \[C#]
+\replay
+If you let this ^happen to us
+don't think you'd be ^setting me free
+Wasn't it \[C#]you and I who \[B]made \[F#] \echo{(only in the 3rd chorus)}
+
+Wasn't it you and I who made
+promises of eternity? <-- don't end on \[C#] in 3rd chorus
+\endchorus
+\beginverse
+What if the lights didn't go on
+What if the velvet curtain
+had to be taken down
+What if the clowns couldn't be clowns
+and all those painted smiles
+gave in to plaintive frowns
+What if no show ever happened again       <-- for the extra line,
+No Seven, no 8 1/2, no Nine, and no "10"      play the sequence
+All numbers and no mystery                    %F# B F# C# F# C# B F# C#
+No promise of eternity (C) (C)
+\endverse
+\endsong
+
+\beginsong{World Love}
+\beginverse
+{\nolyrics Intro: \[G] \[Am] \[C] \[D]}
+\endverse
+\beginverse
+\memorize
+When the rhythm \[G]calls the \[Am]government \[C]falls
+\[D]Here come the cops \[Am] \[C] \[D]
+From Tokyo to Soweto
+viva la musica pop
+We are black & white and we dance all night
+down at the hop
+and the letters were tall on the Berlin Wall
+viva la musica pop
+So if you're feeling low
+stuck in some bardo
+I, even I know the solution
+love, music, wine and revolution
+love, love,
+love, music, wine and revolution
+This too shall pass so raise your glass
+to change and chance
+and freedom is the only law
+shall we dance...
+\endverse
+\endsong
+
+\beginsong{Washington, D.C.}
+\beginverse
+W! ASH! ING! TON, baby, D.C.!
+W! ASH! ING! TON, baby, D.C.!
+\endverse
+\beginverse
+G:320033      D:x00232 C:032010     G
+Washington, D.C., it's paradise to me
+
+     Am:002210       C               G   D
+It's not because it is the grand old seat
+of precious freedom and democracy, no no no
+
+     C                Em:022000       Am
+It's not the greenery turning gold in fall
+
+            G            D   D7:x00212
+the scenery circling the Mall
+
+     Am                   C                   G
+It's just that's where my baby lives, that's all
+\endverse
+\beginverse
+Washington, D.C., it's the greatest place to be
+It's not the cherries everywhere in bloom
+It's not the way they put folks on the Moon, no no no
+It's not the spectacles and pageantry
+the thousand things you've got to see
+It's just that's where my baby waits for me
+\endverse
+\beginverse
+W! ASH! ING! TON, baby, D.C.!
+W! ASH! ING! TON, baby, D.C.!
+\endverse
+\beginverse
+Washington, D.C., it fits me to a T
+It's not the people doing something real
+It's not the way the springtime makes you feel, no no no
+It ain't no famous name on a golden plaque
+that makes me ride that railroad track
+It's my baby's kiss that keeps me coming back
+
+        C                D                G
+It's my baby's kiss that keeps me coming back
+\endverse
+\endsong
+
+

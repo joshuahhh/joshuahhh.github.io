@@ -1,0 +1,9 @@
+*.pyc
+
+# These are build output files
+/necklaces.js
+/index.html
+
+/silly
+/old
+/mathjax

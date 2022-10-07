@@ -1,0 +1,9 @@
+[ ] Fix text-box entry
+[ ] "Dotted line" off of foreach with undefined domain
+[ ] Generally, better handling of incomplete trees
+
+[ ] NumberNode
+[ ] "Either"
+[ ] Variable-length tuples, variable-length "Either"s, etc
+[ ] Math expressions
+[ ] Grids!

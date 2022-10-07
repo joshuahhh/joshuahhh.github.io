@@ -1,0 +1,15 @@
+Twittersaurus checks to see whether certain Twitter usernames are
+available. Red means "taken", green means "free". It has three modes:
+
+Thesaurus  -- Look up synonyms of a given word. (The thesaurus I'm
+              currently using isn't too good. I should replace it.
+              Meanwhile, in honor of our T-rex mascot, try "sexy".)
+
+Numbers    -- Look up numbers. (Stops at 6000.)
+
+Dictionary -- Look up words out of a dictionary. (98569 of them.)
+
+This project is kind of sketchily coded. I hope you enjoy it.
+
+Cheers,
+  Josh

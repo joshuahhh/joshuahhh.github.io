@@ -1,0 +1,53 @@
+!!! 5
+html
+  head
+    meta(http-equiv="content-type", content="text/html; charset=UTF-8")
+    meta(charset="utf-8")
+    title Counting Symmetric Objects</title>
+    link(rel="stylesheet", type="text/css", href="confit.css")
+    script(src="d3.js")
+    script(src="underscore.js")
+    // script(src="reload.js")
+    script(type="text/x-mathjax-config").
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        displayAlign: "left"
+      });
+    script(src="mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+    style.
+      .valign { display: inline-block; vertical-align: top}
+      line { stroke: #000; }
+      circle { stroke: #000; fill: none; }
+      #n, #k { width: 30px; }
+      .multiplication-table th {
+        border-bottom: 1px solid #BBBBBB;
+      }
+      .rotator-cell {
+        border-right: 1px solid #BBBBBB;
+      }
+      .fixed-point {
+        background: #EEEEEE;
+      }
+      .multiplication-table td, th {
+        padding: 5px;
+      }
+      .tableInlineBlock table {
+        display: inline-block;
+      }
+      .sidenote {
+        margin-right: -170px;
+        position: absolute;
+        right: 0;
+        top: auto; /* default */
+        width: 150px;
+      }
+  body.wf-active
+    #content.site-content(style="margin: 30px; max-width: 700px")
+      header.entry-header
+        h1.entry-title Counting Symmetric Objects
+        .entry-meta Joshua Horowitz (December 2014)
+      .entry-content
+        != content
+    script(src="generate.js")
+    script(src="necklaces.js")
+    script(src="coffee-script.js")
