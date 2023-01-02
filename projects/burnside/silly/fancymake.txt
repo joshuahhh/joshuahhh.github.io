@@ -1,0 +1,13 @@
+FANCYMAKE SAYS
+
+content_html == markdown_compile(read("index.markdown"))
+full_html == jade_compile(read("index.jade"), content_wrapper(content_html))
+read("out.html") == full_html
+
+"index.html" => content_string
+                   ||
+                   \/
+"index.html"    content_html
+   ||              ||
+   \/              \/
+jade_string  => full_html       => "out.html"

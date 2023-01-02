@@ -1,0 +1,69 @@
+w = 750
+h = 600
+p = 5.5
+r = w / 20 - 2 * p
+fill = d3.scale.ordinal().range(["#000", "#fff", "#00f", "#0f0", "#f00"]
+                         .concat(d3.scale.category20().range()));
+
+svg = d3.select("#vis").append("svg")
+        .attr("width", w + 2 * p)
+        .attr("height", h + 2 * p);
+
+necklaceGrid = (element, necklaces) ->
+  necklace = element.selectAll("g")
+      .data(necklaces, (d) -> d.join(""))
+  necklace.enter().append("g")
+    .append("circle")
+      .attr("cy", r)
+      .attr("r", r)
+  necklace.exit().remove()
+  necklace.attr("transform",
+    (d, i) -> "translate(#{(2 * r + 4 * p) * (i % 10)},#{(2 * r + 4 * p) * ~~(i / 10)})")
+  bead = necklace.selectAll("circle.bead")
+      .data(Object)
+  bead.enter().append("circle")
+      .attr("class", "bead")
+      .attr("r", 5)
+  bead.exit().remove()
+  bead.attr("transform", (d, i) ->
+    n = d3.select(@parentNode).datum().length
+    "rotate(#{i * 360 / n} #{[0, r]})")
+  bead.style("fill", fill)
+
+
+update = ->
+  n = +d3.select("#n").property("value") # number of beads
+  k = +d3.select("#k").property("value") # number of colours
+  b = d3.select("#b").property("checked") # restrict to bracelets
+  fill.domain(d3.range(k))
+
+  necklaceSets = ((if b then generate_bracelets else generate_necklaces)(n,kk) for kk in [1..k])
+
+  svg.selectAll("g").remove()
+
+  height = 0
+
+  for necklaces, i in necklaceSets
+    console.log height
+    group = svg.append("g").attr("transform", "translate(" + [r + p, r + p + height] + ")");
+    necklaceGrid(group, necklaces)
+    height += (Math.ceil(necklaces.length / 10) * (2 * r + 4 * p) + r)
+
+  svg.attr("height", height)
+  #d3.select("#count").text(necklaces1.length)
+
+changeHandler = (action) ->
+  return ->
+    a = "value"
+    b = "defaultValue"
+    if @type == "checkbox"
+      a = "checked"
+      b = "defaultChecked"
+    if @[a] == @[b] then return
+    action()
+    @[b] = @[a]
+d3.selectAll("#n, #k, #b")
+  .on("change", changeHandler(update))
+  .on("click", changeHandler(update));
+
+update()
