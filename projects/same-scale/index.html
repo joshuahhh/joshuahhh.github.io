@@ -36,10 +36,7 @@ body.column {
 #left-ghostcursor, #right-ghostcursor {
     position: absolute;
     pointer-events: none;
-    line-height: 0;
-    width: 0;
-    height: 0;
-    transform: rotate(72deg) translate(0, -2px);
+    transform: translate(-50%, -50%);
     font-size: 150%;
     opacity: 30%;
     visibility: hidden;
@@ -99,11 +96,11 @@ body.column #left {
 
 <div id="left">
     <div id="left-map"></div>
-    <div id="left-ghostcursor">◄</div>
+    <div id="left-ghostcursor">○</div>
 </div>
 <div id="right">
     <div id="right-map"></div>
-    <div id="right-ghostcursor">◄</div>
+    <div id="right-ghostcursor">○</div>
 </div>
 
 <div id="about">
