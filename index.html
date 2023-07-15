@@ -16,6 +16,16 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet">
 
     <script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
+
+    <style>
+        ul {
+            padding-left: 1rem;
+        }
+
+        ul > li {
+            list-style-position: inside;
+        }
+    </style>
 </head>
 
 <body class="site">
@@ -34,7 +44,7 @@
 
         <div class="post p2 p-responsive wrap" role="main">
             <div class="measure">
-                <div class="home">
+                <div class="home" id="home">
                     <header class="home-header">
                         <h1 class="h2"></h1>
                     </header>
@@ -42,11 +52,11 @@
                         <p>Hi!</p>
                         <p>I'm a PhD student at the University of Washington in the School of Computer Science & Engineering.</p>
                         <p>I work on dynamic media, end-user programming, convivial & equitable computing, visualization, learning communities, creative tools, and tangible/spatial computing.</p>
-                        <p>Before starting at UW, I was part of the team that made <a href="https://dynamicland.org/"><img src="dynamicland.png" alt="Dynamicland" style="width: 8em; height:0.8em;"></a>.</p>
+                        <p>Before starting at UW, I was part of the team that made <a href="https://dynamicland.org/" data-img-right="side-dynamicland.jpg"><img src="dynamicland.png" alt="Dynamicland" style="width: 8em; height:0.8em;"></a>.</p>
                         <p>Some smaller projects I've worked on:</p>
                         <ul>
-                            <li><a href="https://www.inkandswitch.com/inkbase/">Inkbase</a>: a programmable digital sketchbook.</li>
-                            <li><a href="projects/pane/">PANE</a>: a live-programming environment built around data-visibility. </li>
+                            <li data-img-left="side-inkbase.jpg" data-img-higher data-img-offset-y="0"><a href="https://www.inkandswitch.com/inkbase/">Inkbase</a>: a programmable digital sketchbook.</li>
+                            <li data-img-left="side-pane.png" data-img-offset-y="30"><a href="projects/pane/">PANE</a>: a live-programming environment built around data-visibility. </li>
                         </ul>
                         <p>Unrelatedly – I've made a handful of mapping gadgets which are kinda fun! In descending order of usefulness:</p>
                         <ul>
@@ -65,5 +75,87 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // this is bad code because code is bad
+
+        const home = document.getElementById('home');
+        const homeBB = home.getBoundingClientRect();
+
+        const imgGapOuter = 80;
+        const imgGapInner = 120;
+        const pathGap = 20;
+
+        for (let side of ['left', 'right']) {
+            const srcs = document.querySelectorAll(`[data-img-${side}]`);
+            const srcToImg = new Map();
+            const srcToPath = new Map();
+            let update;
+            for (let i = 0; i < srcs.length; i++) {
+                const src = srcs[i];
+
+                const imgUrl = src.getAttribute(`data-img-${side}`);
+                const img = document.createElement('img');
+                img.src = imgUrl;
+                img.style.position = 'absolute';
+                img.style.boxShadow = '0px 2px 6px 0px rgba(0, 0, 0, 0.25)';
+                document.body.appendChild(img);
+                img.addEventListener("load", () => { console.log('load'); update() });
+                srcToImg.set(src, img);
+
+                const srcBB = src.getBoundingClientRect();
+                const imgBB = img.getBoundingClientRect();
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.style.fill = 'none';
+                path.style.stroke = 'rgba(0,0,0,0.5)';
+                path.style.strokeWidth = '1px';
+                srcToPath.set(src, path);
+
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.style.position = 'absolute';
+                svg.style.overflow = 'visible';
+                svg.style.left = '0';
+                svg.style.top = '0';
+                svg.style.width = '100%';
+                svg.style.height = '100%';
+                svg.style.pointerEvents = 'none';
+                svg.appendChild(path);
+                document.body.appendChild(svg);
+            }
+            update = () => {
+                console.log('update', srcToImg)
+                srcToImg.forEach((img, src) => {
+
+                    const srcBB = src.getBoundingClientRect();
+                    const homeBB = home.getBoundingClientRect();
+                    const width = side === 'right'
+                        ? window.innerWidth - homeBB.right - imgGapInner - imgGapOuter
+                        : homeBB.left - imgGapInner - imgGapOuter;
+                    const visible = img.complete && width >= 150;
+                    img.style.left = side === 'right'
+                        ? (homeBB.right + imgGapInner) + 'px'
+                        : imgGapOuter + 'px';
+                    img.style.width = width + 'px';
+
+                    img.style.top = ((src.getAttribute('data-img-higher') !== null ? srcBB.bottom - img.height : srcBB.top) + (+src.getAttribute('data-img-offset-y'))) + 'px';
+                    img.style.visibility = visible ? 'visible' : 'hidden';
+
+                    const imgBB = img.getBoundingClientRect();
+
+                    console.log(imgBB.height, img.height, img.clientHeight, src.getAttribute('data-img-higher') !== null);
+
+                    const path = srcToPath.get(src);
+                    const pathStr = side === 'right'
+                        ? `M${srcBB.right + pathGap},${srcBB.top + srcBB.height / 2} H${homeBB.right + imgGapInner/2} V${imgBB.top + img.height / 2} H${imgBB.left - pathGap}`
+                        : `M${srcBB.left - pathGap},${srcBB.top + srcBB.height / 2} H${homeBB.left - imgGapInner/2} V${imgBB.top + img.height / 2} H${imgBB.right + pathGap}`;
+                    path.setAttribute('d', pathStr);
+                    path.style.visibility = img.style.visibility;
+                });
+            }
+
+            window.addEventListener('resize', update);
+            update();
+        }
+    </script>
 </body>
 </html>
