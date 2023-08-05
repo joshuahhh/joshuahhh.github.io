@@ -25,6 +25,31 @@
         ul > li {
             list-style-position: inside;
         }
+
+        .illus-img {
+            position: absolute;
+            /* box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25); */
+        }
+
+        .illus-img-border {
+            border: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        .illus-svg {
+            position: absolute;
+            overflow: visible;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .illus-path {
+            fill: none;
+            stroke: rgba(0, 0, 0, 0.3);
+            stroke-width: 1px;
+        }
     </style>
 </head>
 
@@ -52,11 +77,11 @@
                         <p>Hi!</p>
                         <p>I'm a PhD student at the University of Washington in the School of Computer Science & Engineering.</p>
                         <p>I work on dynamic media, end-user programming, convivial & equitable computing, visualization, learning communities, creative tools, and tangible/spatial computing.</p>
-                        <p>Before starting at UW, I was part of the team that made <a href="https://dynamicland.org/" data-img-right="side-dynamicland.jpg"><img src="dynamicland.png" alt="Dynamicland" style="width: 8em; height:0.8em;"></a>.</p>
+                        <p>Before starting at UW, I was part of the team that made <a href="https://dynamicland.org/" data-illus-right="side-dynamicland.jpg"><img src="dynamicland.png" alt="Dynamicland" style="width: 8em; height:0.8em;"></a>.</p>
                         <p>Some smaller projects I've worked on:</p>
                         <ul>
-                            <li data-img-left="side-inkbase.jpg" data-img-higher data-img-offset-y="0"><a href="https://www.inkandswitch.com/inkbase/">Inkbase</a>: a programmable digital sketchbook.</li>
-                            <li data-img-left="side-pane.png" data-img-offset-y="30"><a href="projects/pane/">PANE</a>: a live-programming environment built around data-visibility. </li>
+                            <li data-illus-left="side-inkbase.jpg" data-illus-higher data-illus-offset-y="0"><a href="https://www.inkandswitch.com/inkbase/">Inkbase</a>: a programmable digital sketchbook.</li>
+                            <li data-illus-left="side-pane.png" data-illus-offset-y="30" data-illus-border><a href="projects/pane/">PANE</a>: a live-programming environment built around data-visibility. </li>
                         </ul>
                         <p>Unrelatedly – I've made a handful of mapping gadgets which are kinda fun! In descending order of usefulness:</p>
                         <ul>
@@ -87,18 +112,20 @@
         const pathGap = 20;
 
         for (let side of ['left', 'right']) {
-            const srcs = document.querySelectorAll(`[data-img-${side}]`);
+            const srcs = document.querySelectorAll(`[data-illus-${side}]`);
             const srcToImg = new Map();
             const srcToPath = new Map();
             let update;
             for (let i = 0; i < srcs.length; i++) {
                 const src = srcs[i];
 
-                const imgUrl = src.getAttribute(`data-img-${side}`);
+                const imgUrl = src.getAttribute(`data-illus-${side}`);
                 const img = document.createElement('img');
                 img.src = imgUrl;
-                img.style.position = 'absolute';
-                img.style.boxShadow = '0px 2px 6px 0px rgba(0, 0, 0, 0.25)';
+                img.classList.add('illus-img');
+                if (src.getAttribute('data-illus-border') !== null) {
+                    img.classList.add('illus-img-border');
+                }
                 document.body.appendChild(img);
                 img.addEventListener("load", () => { console.log('load'); update() });
                 srcToImg.set(src, img);
@@ -106,19 +133,11 @@
                 const srcBB = src.getBoundingClientRect();
                 const imgBB = img.getBoundingClientRect();
                 const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path.style.fill = 'none';
-                path.style.stroke = 'rgba(0,0,0,0.5)';
-                path.style.strokeWidth = '1px';
+                path.classList.add('illus-path');
                 srcToPath.set(src, path);
 
                 const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-                svg.style.position = 'absolute';
-                svg.style.overflow = 'visible';
-                svg.style.left = '0';
-                svg.style.top = '0';
-                svg.style.width = '100%';
-                svg.style.height = '100%';
-                svg.style.pointerEvents = 'none';
+                svg.classList.add('illus-svg');
                 svg.appendChild(path);
                 document.body.appendChild(svg);
             }
@@ -137,12 +156,12 @@
                         : imgGapOuter + 'px';
                     img.style.width = width + 'px';
 
-                    img.style.top = ((src.getAttribute('data-img-higher') !== null ? srcBB.bottom - img.height : srcBB.top) + (+src.getAttribute('data-img-offset-y'))) + 'px';
+                    img.style.top = ((src.getAttribute('data-illus-higher') !== null ? srcBB.bottom - img.height : srcBB.top) + (+src.getAttribute('data-illus-offset-y'))) + 'px';
                     img.style.visibility = visible ? 'visible' : 'hidden';
 
                     const imgBB = img.getBoundingClientRect();
 
-                    console.log(imgBB.height, img.height, img.clientHeight, src.getAttribute('data-img-higher') !== null);
+                    console.log(imgBB.height, img.height, img.clientHeight, src.getAttribute('data-illus-higher') !== null);
 
                     const path = srcToPath.get(src);
                     const pathStr = side === 'right'
