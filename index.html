@@ -26,7 +26,7 @@
             list-style-position: inside;
         }
 
-        .illus-img {
+        .illus-figure {
             position: absolute;
             /* box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25); */
         }
@@ -113,28 +113,44 @@
 
         for (let side of ['left', 'right']) {
             const srcs = document.querySelectorAll(`[data-illus-${side}]`);
-            const srcToImg = new Map();
-            const srcToPath = new Map();
+            const srcToInfo = new Map();
             let update;
             for (let i = 0; i < srcs.length; i++) {
                 const src = srcs[i];
+                const info = {};
+                srcToInfo.set(src, info);
 
                 const imgUrl = src.getAttribute(`data-illus-${side}`);
                 const img = document.createElement('img');
+                info.img = img;
                 img.src = imgUrl;
-                img.classList.add('illus-img');
                 if (src.getAttribute('data-illus-border') !== null) {
                     img.classList.add('illus-img-border');
                 }
-                document.body.appendChild(img);
-                img.addEventListener("load", () => { console.log('load'); update() });
-                srcToImg.set(src, img);
+                img.addEventListener("load", () => {
+                    // console.log('load');
+                    update();
+                });
+                const figure = document.createElement('a');
+                figure.classList.add('illus-figure');
+                figure.appendChild(img);
 
-                const srcBB = src.getBoundingClientRect();
-                const imgBB = img.getBoundingClientRect();
+                let link;
+                if (src.matches('a')) {
+                    link = src;
+                } else {
+                    link = src.querySelector('a');
+                }
+                if (link) {
+                    figure.href = link.getAttribute('href');
+                    // console.log(src, link.getAttribute('href'));
+                }
+                document.body.appendChild(figure);
+                info.figure = figure;
+
                 const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
                 path.classList.add('illus-path');
-                srcToPath.set(src, path);
+                info.path = path;
 
                 const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                 svg.classList.add('illus-svg');
@@ -142,33 +158,31 @@
                 document.body.appendChild(svg);
             }
             update = () => {
-                console.log('update', srcToImg)
-                srcToImg.forEach((img, src) => {
-
+                // console.log('update', srcToFigure)
+                srcToInfo.forEach(({img, figure, path}, src) => {
                     const srcBB = src.getBoundingClientRect();
                     const homeBB = home.getBoundingClientRect();
                     const width = side === 'right'
                         ? window.innerWidth - homeBB.right - imgGapInner - imgGapOuter
                         : homeBB.left - imgGapInner - imgGapOuter;
                     const visible = img.complete && width >= 150;
-                    img.style.left = side === 'right'
+                    figure.style.left = side === 'right'
                         ? (homeBB.right + imgGapInner) + 'px'
                         : imgGapOuter + 'px';
-                    img.style.width = width + 'px';
+                    figure.style.width = width + 'px';
 
-                    img.style.top = ((src.getAttribute('data-illus-higher') !== null ? srcBB.bottom - img.height : srcBB.top) + (+src.getAttribute('data-illus-offset-y'))) + 'px';
-                    img.style.visibility = visible ? 'visible' : 'hidden';
+                    figure.style.top = ((src.getAttribute('data-illus-higher') !== null ? srcBB.bottom - img.height : srcBB.top) + (+src.getAttribute('data-illus-offset-y'))) + 'px';
+                    figure.style.visibility = visible ? 'visible' : 'hidden';
 
                     const imgBB = img.getBoundingClientRect();
 
-                    console.log(imgBB.height, img.height, img.clientHeight, src.getAttribute('data-illus-higher') !== null);
+                    // console.log(imgBB.height, img.height, img.clientHeight, src.getAttribute('data-illus-higher') !== null);
 
-                    const path = srcToPath.get(src);
                     const pathStr = side === 'right'
                         ? `M${srcBB.right + pathGap},${srcBB.top + srcBB.height / 2} H${homeBB.right + imgGapInner/2} V${imgBB.top + img.height / 2} H${imgBB.left - pathGap}`
                         : `M${srcBB.left - pathGap},${srcBB.top + srcBB.height / 2} H${homeBB.left - imgGapInner/2} V${imgBB.top + img.height / 2} H${imgBB.right + pathGap}`;
                     path.setAttribute('d', pathStr);
-                    path.style.visibility = img.style.visibility;
+                    path.style.visibility = figure.style.visibility;
                 });
             }
 
