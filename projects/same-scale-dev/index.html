@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+<title>Same Scale</title>
+
+<script src="./ol.js"></script>
+<script src="./ol-geocoder.js"></script>
+<link rel="stylesheet" href="./ol.css">
+<link rel="stylesheet" href="./ol-geocoder.css">
+
+<script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
+
+<style>
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    font-family: sans-serif;
+}
+
+body.column {
+    flex-direction: column;
+}
+
+#left, #right {
+    flex: 1;
+    position: relative;
+}
+
+#left-map, #right-map {
+    height: 100%;
+}
+
+#left-ghostcursor, #right-ghostcursor {
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    font-size: 150%;
+    opacity: 50%;
+    visibility: hidden;
+    width: 15px;
+    height: 15px;
+    background: black;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+
+body:not(.column) #left {
+    border-right: 1px solid black;
+}
+
+body.column #left {
+    border-bottom: 1px solid black;
+}
+
+.ol-geocoder.gcd-gl-container {
+    top: 0.5em;
+}
+
+.ol-zoom {
+    top: 3em;
+}
+
+#about {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    background-color: rgba(255,255,255,.4);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+#about summary {
+    font-weight: bold;
+}
+
+#about details {
+    display: block;
+    margin: 1px;
+    padding: 0.5em;
+    color: #fff;
+    background-color: rgba(0,60,136,.5);
+    border: none;
+    border-radius: 2px;
+
+    font-size: 80%;
+    max-width: 200px;
+}
+
+#about div {
+    margin-top: 10px;
+}
+
+#about a {
+    color: #fff;
+}
+
+</style>
+
+<div id="left">
+    <div id="left-map"></div>
+    <div id="left-ghostcursor"></div>
+</div>
+<div id="right">
+    <div id="right-map"></div>
+    <div id="right-ghostcursor"></div>
+</div>
+
+<div id="about">
+    <details>
+        <summary>About</summary>
+        <div>As you pan and zoom, these maps maintain equal scales.</div>
+        <div>Use <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABPUlEQVQoU41SwXHCQAzUHh58eoUOIBWEDkI6oAToIKkg7iAuwakgpAIowXRACcnrzp6BzchjMx4wE/S6kW5XK60gvQghzJIkmVoqSZI9gJ9+/fINS5Cc1HX9QXIlIr/tpwcRyb33b7cIGnAIYQdg4pxbjcfj0nJ1Xc+Px+PGObdN03Q9RIAQwgpAnqbp7FKmjQGgJLlU1d2V7BjjRkQO3vvXIXarkyxVNbsCm2QR2Q0V7XOMMReRmfd+OQQubN6hYgs22ZtbnRcAtiRfLueqqmpJ8ovko6oeBq0KIWQA3gFkzrlmMafTaUEyI/mpqmbhVTRWWbRdbClPbeobQNES5KPRqOxs7DBn8K1DsAOKMZYApiTXqlrcDe4d0XN7jWeCfzt351tVle2iGalTcBd4gGDvvZ/fDe4RmCOFLe8Pr7mvEP2N9PQAAAAASUVORK5CYII="> to fly to points of interest.</div>
+        <div>By <a href="http://joshuahhh.com/">Josh Horowitz</a>.</div>
+    </details>
+    <select id="select-layer">
+        <option>Map</option>
+        <option>Satellite</option>
+    </select>
+</div>
+
+<script>
+
+const sides = ['left', 'right'];
+const views = {};
+const maps = {};
+const ghostCursors = {};
+
+const scaleControl = new ol.control.ScaleLine();
+
+sides.forEach((side) => {
+    const otherSide = ({'left': 'right', 'right': 'left'})[side];
+
+    views[side] = new ol.View({
+        center: [0, 0],
+        zoom: 2,
+        enableRotation: false,
+    });
+
+    maps[side] = new ol.Map({
+        controls: [
+            new Geocoder('nominatim', {
+                provider: 'osm',
+                lang: 'en-US',
+                featureStyle: new ol.style.Style(),
+                autoComplete: true,
+            })
+        ],
+        target: `${side}-map`,
+        view: views[side],
+    });
+
+    views[side].on('propertychange', () => {
+        const resolution = views[side].getResolution()
+        const newResolution =
+            resolution
+            * Math.cos(ol.proj.toLonLat(views[side].getCenter())[1] / 180 * Math.PI)
+            / Math.cos(ol.proj.toLonLat(views[otherSide].getCenter())[1] / 180 * Math.PI);
+        if (Math.abs(views[otherSide].getResolution() - newResolution) > 1e-6) {
+            views[otherSide].setResolution(newResolution);
+        }
+    });
+
+    views[side].on('change', updateHash);
+
+    if (side === 'left') {
+        maps[side].addControl(new ol.control.Zoom());
+    }
+
+    ghostCursors[side] = document.getElementById(`${side}-ghostcursor`);
+    document.getElementById(side).addEventListener('mousemove', (e) => {
+        const bbox = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - bbox.left;
+        const y = e.clientY - bbox.top;
+        ghostCursors[otherSide].style.visibility = 'visible';
+        ghostCursors[otherSide].style.left = `${x}px`;
+        ghostCursors[otherSide].style.top = `${y}px`;
+        ghostCursors[side].style.visibility = 'hidden';
+    });
+    document.getElementById(side).addEventListener('mouseout', (e) => {
+        ghostCursors[otherSide].style.visibility = 'hidden';
+    });
+})
+
+function onResize() {
+    if (window.innerWidth < window.innerHeight) {
+        document.body.classList.add('column');
+        scaleControl.setMap(maps['right']);
+    } else {
+        document.body.classList.remove('column');
+        scaleControl.setMap(maps['left']);
+    }
+    maps['left'].updateSize()
+    maps['right'].updateSize()
+}
+window.addEventListener('resize', onResize);
+onResize();
+
+function updateHash() {
+    const centerLeft = ol.proj.toLonLat(views['left'].getCenter());
+    const centerRight = ol.proj.toLonLat(views['right'].getCenter());
+    const zoom = views['left'].getZoom();
+    const digits = Math.max(0, Math.ceil(zoom * Math.log(4) / Math.log(10)) - 1);
+    const hashParts = [
+        zoom.toFixed(2),
+        centerLeft[1].toFixed(digits),
+        centerLeft[0].toFixed(digits),
+        centerRight[1].toFixed(digits),
+        centerRight[0].toFixed(digits),
+        selectLayer.value,
+    ];
+    const hash = '#' + hashParts.join('/');
+    window.history.replaceState(null, null, hash);
+}
+
+const selectLayer = document.getElementById('select-layer');
+
+// HACK: this needs to come before onSelectLayerChange()
+try {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+        const [zoom, latLeft, lonLeft, latRight, lonRight, layer] = hash.split('/');
+        views['left'].setCenter(ol.proj.fromLonLat([+lonLeft, +latLeft]));
+        views['right'].setCenter(ol.proj.fromLonLat([+lonRight, +latRight]));
+        views['left'].setZoom(+zoom);  // HACK: this needs to come after setting centers
+        selectLayer.value = layer;
+    }
+} catch (e) {
+    console.warn(`trouble parsing hash: ${window.location.hash}`, e);
+}
+
+const layerUrl = {
+    'Map': 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
+    'Satellite': 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+};
+function onSelectLayerChange() {
+    const selection = selectLayer.value;
+    sides.forEach((side) => {
+        maps[side].removeLayer(maps[side].getLayers().item(0));
+        maps[side].addLayer(
+            new ol.layer.Tile({
+                source: new ol.source.XYZ({
+                    url: layerUrl[selection],
+                    // it's always retina; hope that's ok
+                    tilePixelRatio: 2,
+                })
+            }),
+        );
+    });
+    updateHash();
+}
+selectLayer.addEventListener('change', onSelectLayerChange);
+onSelectLayerChange();
+
+</script>
