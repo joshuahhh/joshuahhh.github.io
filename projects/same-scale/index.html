@@ -40,8 +40,13 @@ body.column {
     pointer-events: none;
     transform: translate(-50%, -50%);
     font-size: 150%;
-    opacity: 30%;
+    opacity: 50%;
     visibility: hidden;
+    width: 15px;
+    height: 15px;
+    background: black;
+    border: 2px solid white;
+    border-radius: 100%;
 }
 
 body:not(.column) #left {
@@ -98,11 +103,11 @@ body.column #left {
 
 <div id="left">
     <div id="left-map"></div>
-    <div id="left-ghostcursor">○</div>
+    <div id="left-ghostcursor"></div>
 </div>
 <div id="right">
     <div id="right-map"></div>
-    <div id="right-ghostcursor">○</div>
+    <div id="right-ghostcursor"></div>
 </div>
 
 <div id="about">
@@ -120,7 +125,11 @@ body.column #left {
 
 <script>
 
+// -----------
+// BASIC SETUP
+
 const sides = ['left', 'right'];
+const flipSides = {'left': 'right', 'right': 'left'};
 const views = {};
 const maps = {};
 const ghostCursors = {};
@@ -128,10 +137,12 @@ const ghostCursors = {};
 const scaleControl = new ol.control.ScaleLine();
 
 sides.forEach((side) => {
+    const otherSide = flipSides[side];
+
     views[side] = new ol.View({
         center: [0, 0],
         zoom: 2,
-        enableRotation: false,
+        enableRotation: true,
     });
 
     maps[side] = new ol.Map({
@@ -147,20 +158,7 @@ sides.forEach((side) => {
         view: views[side],
     });
 
-    views[side].on('propertychange', () => {
-        const resolution = views[side].getResolution()
-        sides.forEach((otherSide) => {
-            if (otherSide !== side) {
-                const newResolution =
-                    resolution
-                    * Math.cos(ol.proj.toLonLat(views[side].getCenter())[1] / 180 * Math.PI)
-                    / Math.cos(ol.proj.toLonLat(views[otherSide].getCenter())[1] / 180 * Math.PI);
-                if (Math.abs(views[otherSide].getResolution() - newResolution) > 1e-6) {
-                    views[otherSide].setResolution(newResolution);
-                }
-            }
-        })
-    });
+    views[side].on('change', updateHash);
 
     if (side === 'left') {
         maps[side].addControl(new ol.control.Zoom());
@@ -171,23 +169,19 @@ sides.forEach((side) => {
         const bbox = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - bbox.left;
         const y = e.clientY - bbox.top;
-        sides.forEach((otherSide) => {
-            if (otherSide !== side) {
-                ghostCursors[otherSide].style.visibility = 'visible';
-                ghostCursors[otherSide].style.left = `${x}px`;
-                ghostCursors[otherSide].style.top = `${y}px`;
-            }
-        });
+        ghostCursors[otherSide].style.visibility = 'visible';
+        ghostCursors[otherSide].style.left = `${x}px`;
+        ghostCursors[otherSide].style.top = `${y}px`;
         ghostCursors[side].style.visibility = 'hidden';
     });
     document.getElementById(side).addEventListener('mouseout', (e) => {
-        sides.forEach((otherSide) => {
-            if (otherSide !== side) {
-                ghostCursors[otherSide].style.visibility = 'hidden';
-            }
-        });
+        ghostCursors[otherSide].style.visibility = 'hidden';
     });
 })
+
+
+// -----------------------
+// WINDOW RESIZE LISTENING
 
 function onResize() {
     if (window.innerWidth < window.innerHeight) {
@@ -201,14 +195,18 @@ function onResize() {
     maps['right'].updateSize()
 }
 window.addEventListener('resize', onResize);
-onResize();
 
+
+// ----------------------
+// LAYER SELECT LISTENING
+
+const selectLayer = document.getElementById('select-layer');
 const layerUrl = {
     'Map': 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
     'Satellite': 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
 };
 function onSelectLayerChange() {
-    const selection = document.getElementById('select-layer').value;
+    const selection = selectLayer.value;
     sides.forEach((side) => {
         maps[side].removeLayer(maps[side].getLayers().item(0));
         maps[side].addLayer(
@@ -221,8 +219,83 @@ function onSelectLayerChange() {
             }),
         );
     });
+    updateHash();
 }
-document.getElementById('select-layer').addEventListener('change', onSelectLayerChange);
+selectLayer.addEventListener('change', onSelectLayerChange);
+
+
+// --------------
+// HASH LISTENING
+
+function updateHash() {
+    const centerLeft = ol.proj.toLonLat(views['left'].getCenter());
+    const centerRight = ol.proj.toLonLat(views['right'].getCenter());
+    const zoom = views['left'].getZoom();
+    const digits = Math.max(0, Math.ceil(zoom * Math.log(2) / Math.log(10) + 0.5));
+    const hashParts = [
+        zoom.toFixed(2),
+        centerLeft[1].toFixed(digits),
+        centerLeft[0].toFixed(digits),
+        centerRight[1].toFixed(digits),
+        centerRight[0].toFixed(digits),
+        selectLayer.value,
+    ];
+    const hash = '#' + hashParts.join('/');
+    window.history.replaceState(null, null, hash);
+}
+function onHashChange() {
+    try {
+        const hash = window.location.hash.slice(1);
+        if (hash) {
+            const [zoom, latLeft, lonLeft, latRight, lonRight, layer] = hash.split('/');
+
+            // note: MUST set zoom before centers, so that center motion doesn't get clamped at low zoom
+            views['left'].setZoom(+zoom);  // HACK: this needs to come before setting centers
+            synchronizeZoomFrom('left');
+
+            views['left'].setCenter(ol.proj.fromLonLat([+lonLeft, +latLeft]));
+            views['right'].setCenter(ol.proj.fromLonLat([+lonRight, +latRight]));
+
+            selectLayer.value = layer;
+            onSelectLayerChange();
+        }
+    } catch (e) {
+        console.warn(`trouble parsing hash: ${window.location.hash}`, e);
+    }
+}
+window.addEventListener("hashchange", onHashChange);
+
+
+// ----------------
+// INITIALIZE SYNCS
+
+onResize();
+onHashChange();
 onSelectLayerChange();
+synchronizeZoomFrom('left');
+
+
+// --------------
+// ZOOM LISTENING
+
+// HACK: has to come after initial hash sync
+
+function synchronizeZoomFrom(side) {
+    const otherSide = flipSides[side];
+
+    const resolution = views[side].getResolution()
+    const newResolution =
+        resolution
+        * Math.cos(ol.proj.toLonLat(views[side].getCenter())[1] / 180 * Math.PI)
+        / Math.cos(ol.proj.toLonLat(views[otherSide].getCenter())[1] / 180 * Math.PI);
+    if (Math.abs(views[otherSide].getResolution() - newResolution) > 1e-6) {
+        views[otherSide].setResolution(newResolution);
+    }
+}
+sides.forEach((side) => {
+    views[side].on('propertychange', () => {
+        synchronizeZoomFrom(side);
+    });
+});
 
 </script>
