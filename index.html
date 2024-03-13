@@ -8,19 +8,14 @@
 
     <title>Josh Horowitz</title>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="pixyll.css?202108120428" type="text/css">
-    <style>li { margin-bottom: 0.5em;}</style>
-
-    <!-- Fonts -->
+    <link rel="stylesheet" href="tailwind.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet">
-
     <script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
+    <!-- <script src="live.js"></script> -->
 
     <style>
         .illus-figure {
             position: absolute;
-            /* box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25); */
         }
 
         .illus-img-border {
@@ -45,62 +40,43 @@
     </style>
 </head>
 
-<body class="site">
-    <div class="site-wrap">
-        <header class="site-header px2 px-responsive">
-            <div class="mt2 wrap">
-                <div class="measure">
-                    <a href="/" class="site-title">Josh Horowitz</a>
-                    <nav class="site-nav">
-                        <!-- <a href="/blog/">blog</a> -->
-                    </nav>
-                </div>
-            </div>
+<body>
+    <div id="main" class="mx-auto max-w-2xl px-4 pt-4">
+        <header class="py-8 text-center sm:text-left text-3xl sm:text-2xl italic">
+            Josh Horowitz
         </header>
 
-
-        <div class="post p2 p-responsive wrap" role="main">
-            <div class="measure">
-                <div class="home" id="home">
-                    <header class="home-header">
-                        <h1 class="h2"></h1>
-                    </header>
-                    <article class="home-content">
-                        <p>Hi!</p>
-                        <p>I'm a PhD student at the University of Washington in the School of Computer Science & Engineering.</p>
-                        <p>I work on dynamic media, end-user programming, convivial & equitable computing, visualization, learning communities, creative tools, and tangible/spatial computing.</p>
-                        <p data-illus-right="side-engraft.png" data-illus-higher data-illus-border>
-                            Lately I've been developing <a href="https://engraft.dev">Engraft</a>, an API that makes live & rich programming interfaces powerful and practical through composition.
-                        </p>
-                        <p>Before starting at UW, I was part of the team that made <a href="https://dynamicland.org/" data-illus-right="side-dynamicland.jpg"><img src="dynamicland.png" alt="Dynamicland" style="width: 8em; height:0.8em;"></a>.</p>
-                        <p>Some smaller projects I've worked on:</p>
-                        <ul>
-                            <li data-illus-left="side-inkbase.jpg" data-illus-higher data-illus-offset-y="0"><a href="https://www.inkandswitch.com/inkbase/">Inkbase</a>: a programmable digital sketchbook.</li>
-                            <li data-illus-left="side-pane.png" data-illus-offset-y="30" data-illus-border><a href="projects/pane/">PANE</a>: a live-programming environment built around data-visibility. </li>
-                        </ul>
-                        <p>Unrelatedly – I've made a handful of mapping gadgets which are kinda fun! In descending order of usefulness:</p>
-                        <ul>
-                            <li><a href="https://strava-atlas.herokuapp.com/">Strava Atlas</a> (all your Strava activities on a single map)</li>
-                            <li><a href="projects/same-scale/">Two maps at the same scale</a></li>
-                            <li><a href="projects/elevator/">Elevator</a> (interactively-specified <a href="https://en.wikipedia.org/wiki/Hypsometric_tints">hypsometric tints</a>)</li>
-                            <li><a href="https://observablehq.com/@joshuahhh/trees-in-sf">Street trees in SF</a></li>
-                            <li><a href="https://observablehq.com/@joshuahhh/cylindrical-equal-area-projections">Explanation of cylindrical equal-area projections</a></li>
-                        </ul>
-                        <p>(My <a href="index-2020.html">older site</a> has some older projects.)</p>
-                        <p>Feel free to contact me: <a href="mailto:joshuah@alum.mit.edu">joshuah@alum.mit.edu</a>.</p>
-                        <p>Mastodon: <a href="https://assemblag.es/@qualmist">@qualmist@assemblag.es</a>.</p>
-                        <p>Thanks for visiting!</p>
-                    </article>
-                </div>
-            </div>
-        </div>
+        <p>Hi!</p>
+        <p>I'm a PhD student at the University of Washington in the School of Computer Science & Engineering.</p>
+        <p>I work on dynamic media, end-user programming, convivial & equitable computing, visualization, learning communities, creative tools, and tangible/spatial computing.</p>
+        <p data-illus-right="side-engraft.png" data-illus-higher data-illus-border>
+            Lately I've been developing <a href="https://engraft.dev">Engraft</a>, an API that makes live & rich programming interfaces powerful and practical through composition.
+        </p>
+        <p>Before starting at UW, I was part of the team that made <a href="https://dynamicland.org/" data-illus-right="side-dynamicland.jpg"><img src="dynamicland.png" alt="Dynamicland" class="inline" style="width: 8em; height:0.8em;"></a>.</p>
+        <p>Some smaller projects I've worked on:</p>
+        <ul>
+            <li data-illus-left="side-inkbase.jpg" data-illus-higher data-illus-offset-y="0"><a href="https://www.inkandswitch.com/inkbase/">Inkbase</a>: a programmable digital sketchbook.</li>
+            <li data-illus-left="side-pane.png" data-illus-offset-y="30" data-illus-border><a href="projects/pane/">PANE</a>: a live-programming environment built around data-visibility. </li>
+        </ul>
+        <p>Unrelatedly – I've made a handful of mapping gadgets which are kinda fun! In descending order of usefulness:</p>
+        <ul>
+            <li><a href="https://strava-atlas.herokuapp.com/">Strava Atlas</a> (all your Strava activities on a single map)</li>
+            <li><a href="projects/same-scale/">Two maps at the same scale</a></li>
+            <li><a href="projects/elevator/">Elevator</a> (interactively-specified <a href="https://en.wikipedia.org/wiki/Hypsometric_tints">hypsometric tints</a>)</li>
+            <li><a href="https://observablehq.com/@joshuahhh/trees-in-sf">Street trees in SF</a></li>
+            <li><a href="https://observablehq.com/@joshuahhh/cylindrical-equal-area-projections">Explanation of cylindrical equal-area projections</a></li>
+        </ul>
+        <p>(My <a href="index-2020.html">older site</a> has some older projects.)</p>
+        <p>Feel free to contact me: <a href="mailto:joshuah@alum.mit.edu">joshuah@alum.mit.edu</a>.</p>
+        <p>Mastodon: <a href="https://assemblag.es/@qualmist">@qualmist@assemblag.es</a>.</p>
+        <p>Thanks for visiting!</p>
     </div>
 
     <script>
         // this is bad code because code is bad
 
-        const home = document.getElementById('home');
-        const homeBB = home.getBoundingClientRect();
+        const mainElem = document.getElementById('main');
+        const mainBB = mainElem.getBoundingClientRect();
 
         const imgGapOuter = 80;
         const imgGapInner = 120;
@@ -156,13 +132,13 @@
                 // console.log('update', srcToFigure)
                 srcToInfo.forEach(({img, figure, path}, src) => {
                     const srcBB = src.getBoundingClientRect();
-                    const homeBB = home.getBoundingClientRect();
+                    const mainBB = mainElem.getBoundingClientRect();
                     const width = side === 'right'
-                        ? window.innerWidth - homeBB.right - imgGapInner - imgGapOuter
-                        : homeBB.left - imgGapInner - imgGapOuter;
+                        ? window.innerWidth - mainBB.right - imgGapInner - imgGapOuter
+                        : mainBB.left - imgGapInner - imgGapOuter;
                     const visible = img.complete && width >= 150;
                     figure.style.left = side === 'right'
-                        ? (homeBB.right + imgGapInner) + 'px'
+                        ? (mainBB.right + imgGapInner) + 'px'
                         : imgGapOuter + 'px';
                     figure.style.width = width + 'px';
 
@@ -174,8 +150,8 @@
                     // console.log(imgBB.height, img.height, img.clientHeight, src.getAttribute('data-illus-higher') !== null);
 
                     const pathStr = side === 'right'
-                        ? `M${srcBB.right + pathGap},${srcBB.top + srcBB.height / 2} H${homeBB.right + imgGapInner/2} V${imgBB.top + img.height / 2} H${imgBB.left - pathGap}`
-                        : `M${srcBB.left - pathGap},${srcBB.top + srcBB.height / 2} H${homeBB.left - imgGapInner/2} V${imgBB.top + img.height / 2} H${imgBB.right + pathGap}`;
+                        ? `M${srcBB.right + pathGap},${srcBB.top + srcBB.height / 2} H${mainBB.right + imgGapInner/2} V${imgBB.top + img.height / 2} H${imgBB.left - pathGap}`
+                        : `M${srcBB.left - pathGap},${srcBB.top + srcBB.height / 2} H${mainBB.left - imgGapInner/2} V${imgBB.top + img.height / 2} H${imgBB.right + pathGap}`;
                     path.setAttribute('d', pathStr);
                     path.style.visibility = figure.style.visibility;
                 });

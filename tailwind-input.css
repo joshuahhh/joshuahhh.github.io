@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: "Libre Baskerville", "PT Serif", Georgia, "Times New Roman", serif;
+  @apply bg-white text-stone-900 m-0 text-base;
+}
+
+p, ul {
+  @apply mb-4;
+}
+
+ul {
+  @apply list-disc pl-8;
+}
+
+li {
+  @apply mb-2;
+}
+
+a {
+  @apply text-[#0074D9] no-underline;
+}
+
+a:hover, a:focus, a:active {
+  @apply text-[#208054] no-underline border-none;
+}
