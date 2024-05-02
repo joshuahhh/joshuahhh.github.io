@@ -1,3 +1,0 @@
-The loveliest, greenest park! Great for frisbee, picnics, and user-testing!
-
-<img src="assets/images/park.jpg"/>
