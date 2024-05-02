@@ -20,7 +20,7 @@ li {
   @apply mb-6 margins:mb-4;
 }
 
-img {
+[data-illus-inline] {
   @apply mb-2;
 }
 
