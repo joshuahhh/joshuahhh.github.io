@@ -13,7 +13,7 @@ p, ul {
 }
 
 ul {
-  @apply list-disc pl-8;
+  @apply pl-8;
 }
 
 li {

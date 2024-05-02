@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="tailwind.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet">
     <script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
-    <!-- <script src="live.js"></script> -->
 
     <style>
         .illus-figure {
@@ -50,13 +49,23 @@
         <p>I'm a PhD student at the University of Washington in the School of Computer Science & Engineering.</p>
         <p>I work on dynamic media, end-user programming, convivial & equitable computing, visualization, learning communities, creative tools, and tangible/spatial computing.</p>
         <p data-illus-right="side-engraft.png" data-illus-higher data-illus-border>
+            <img src="side-engraft.png" alt="Engraft" width="50%" data-illus-inline class="illus-img-border">
             Lately I've been developing <a href="https://engraft.dev">Engraft</a>, an API that makes live & rich programming interfaces powerful and practical through composition.
         </p>
-        <p>Before starting at UW, I was part of the team that made <a href="https://dynamicland.org/" data-illus-right="side-dynamicland.jpg"><img src="dynamicland.png" alt="Dynamicland" class="inline" style="width: 8em; height:0.8em;"></a>.</p>
+        <p>
+            <img src="side-dynamicland.jpg" alt="Dynamicland" width="50%" data-illus-inline>
+            Before starting at UW, I was part of the team that made <a href="https://dynamicland.org/" data-illus-right="side-dynamicland.jpg"><img src="dynamicland.png" alt="Dynamicland" class="inline" style="width: 8em; height:0.8em;"></a>.
+        </p>
         <p>Some smaller projects I've worked on:</p>
         <ul>
-            <li data-illus-left="side-inkbase.jpg" data-illus-higher data-illus-offset-y="0"><a href="https://www.inkandswitch.com/inkbase/">Inkbase</a>: a programmable digital sketchbook.</li>
-            <li data-illus-left="side-pane.png" data-illus-offset-y="30" data-illus-border><a href="projects/pane/">PANE</a>: a live-programming environment built around data-visibility. </li>
+            <li data-illus-left="side-inkbase.jpg" data-illus-higher data-illus-offset-y="0">
+                <img src="side-inkbase.jpg" alt="Inkbase" width="50%" data-illus-inline>
+                <a href="https://www.inkandswitch.com/inkbase/">Inkbase</a>: a programmable digital sketchbook.
+            </li>
+            <li data-illus-left="side-pane.png" data-illus-offset-y="30" data-illus-border>
+                <img src="side-pane.png" alt="PANE" width="50%" data-illus-inline class="illus-img-border">
+                <a href="projects/pane/">PANE</a>: a live-programming environment built around data-visibility.
+            </li>
         </ul>
         <p>Unrelatedly – I've made a handful of mapping gadgets which are kinda fun! In descending order of usefulness:</p>
         <ul>
@@ -129,13 +138,15 @@
                 document.body.appendChild(svg);
             }
             update = () => {
+                const mainBB = getBoundingPageRect(mainElem);
+                const width = mainBB.left - imgGapInner - imgGapOuter;
+                document.querySelectorAll('[data-illus-inline]').forEach(inline => {
+                    inline.style.display = width < 150 ? 'block' : 'none';
+                });
+
                 // console.log('update', srcToFigure)
                 srcToInfo.forEach(({img, figure, path}, src) => {
-                    const srcBB = src.getBoundingClientRect();
-                    const mainBB = mainElem.getBoundingClientRect();
-                    const width = side === 'right'
-                        ? window.innerWidth - mainBB.right - imgGapInner - imgGapOuter
-                        : mainBB.left - imgGapInner - imgGapOuter;
+                    const srcBB = getBoundingPageRect(src)
                     const visible = img.complete && width >= 150;
                     figure.style.left = side === 'right'
                         ? (mainBB.right + imgGapInner) + 'px'
@@ -145,7 +156,7 @@
                     figure.style.top = ((src.getAttribute('data-illus-higher') !== null ? srcBB.bottom - img.height : srcBB.top) + (+src.getAttribute('data-illus-offset-y'))) + 'px';
                     figure.style.visibility = visible ? 'visible' : 'hidden';
 
-                    const imgBB = img.getBoundingClientRect();
+                    const imgBB = getBoundingPageRect(img);
 
                     // console.log(imgBB.height, img.height, img.clientHeight, src.getAttribute('data-illus-higher') !== null);
 
@@ -159,6 +170,18 @@
 
             window.addEventListener('resize', update);
             update();
+        }
+
+        function getBoundingPageRect(element) {
+            const rect = element.getBoundingClientRect();
+            return {
+                top: rect.top + window.scrollY,
+                left: rect.left + window.scrollX,
+                right: rect.right + window.scrollX,
+                bottom: rect.bottom + window.scrollY,
+                width: rect.width,
+                height: rect.height,
+            };
         }
     </script>
 </body>
