@@ -9,7 +9,7 @@ body {
 }
 
 p, ul {
-  @apply mb-4;
+  @apply mb-6 margins:mb-4;
 }
 
 ul {
@@ -17,6 +17,10 @@ ul {
 }
 
 li {
+  @apply mb-6 margins:mb-4;
+}
+
+img {
   @apply mb-2;
 }
 

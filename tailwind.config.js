@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    screens: {
+      'margins': '1400px',
+    },
   },
   plugins: [
   ],
