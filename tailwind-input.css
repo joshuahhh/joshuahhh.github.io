@@ -13,7 +13,7 @@ p, ul {
 }
 
 ul {
-  @apply pl-8;
+  @apply pl-8 pr-8 margins:pr-0;
 }
 
 li {
