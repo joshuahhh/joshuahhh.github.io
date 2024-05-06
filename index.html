@@ -175,6 +175,13 @@
             }
 
             window.addEventListener('resize', update);
+            // bug: if you load the page in the background, vertical positioning is off.
+            //      this seems like a reasonable workaround.
+            document.addEventListener('visibilitychange', function() {
+                if (document.visibilityState === 'visible') {
+                    update();
+                }
+            });
             update();
         }
 
