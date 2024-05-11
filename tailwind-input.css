@@ -9,15 +9,15 @@ body {
 }
 
 p, ul {
-  @apply mb-6 margins:mb-4;
+  @apply mb-6 sm:mb-4;
 }
 
 ul {
-  @apply pl-8 pr-8 margins:pr-0;
+  @apply pl-8 pr-8 sm:pr-0;
 }
 
 li {
-  @apply mb-6 margins:mb-4;
+  @apply mb-6 sm:mb-4;
 }
 
 [data-illus-inline] {
@@ -30,4 +30,24 @@ a {
 
 a:hover, a:focus, a:active {
   @apply text-[#208054] no-underline border-none;
+}
+
+h2 {
+  @apply text-3xl font-bold mt-8 mb-4;
+}
+
+h3 {
+  @apply text-lg font-bold;
+}
+
+.cell-desc {
+  @apply italic;
+}
+
+.narrower {
+  @apply mx-auto max-w-2xl;
+}
+
+.wider {
+  @apply mx-auto max-w-3xl;
 }

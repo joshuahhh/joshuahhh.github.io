@@ -4,10 +4,7 @@ module.exports = {
     "index.html",
   ],
   theme: {
-    extend: {},
-    screens: {
-      'margins': '1400px',
-    },
+    extend: { },
   },
   plugins: [
   ],
