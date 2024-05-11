@@ -39,20 +39,22 @@
     </style>
 </head>
 
-<body class="hyphens-auto pt-4 px-4 sm:px-8">
-    <div class="narrower">
+<body class="pt-4 px-4 sm:px-8">
+    <div class="center-col">
         <header class="py-8 text-center sm:text-left text-4xl sm:text-4xl italic font-extrabold">
             Josh Horowitz
         </header>
 
-        <p>Hi!</p>
+        <p>Hello!</p>
         <p>I am a PhD student at the University of Washington in the School of Computer Science & Engineering.</p>
         <p>I work on dynamic media, end-user programming, convivial & equitable computing, visualization, learning communities, creative tools, and tangible/spatial computing.</p>
         <p>I'd love to hear from you: <a href="mailto:joshuah@alum.mit.edu">joshuah@alum.mit.edu</a>.
-        <h2>Research</h2>
-        <p>Here are some of the more substantial projects I have contributed to.</p>
     </div>
-    <div class="wider">
+    <div class="center-col-with-heading">
+        <div class="heading">
+            <h2>Programming</h2>
+            <p>Telling computers what to do <i>and/or</i> communicating in a dynamic medium</p>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-6 sm:mb-4">
             <a href="https://engraft.dev" class="text-inherit">
                 <img src="img-engraft.png" alt="Engraft" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
@@ -69,43 +71,68 @@
                 <h3>
                     <img src="dynamicland.png" alt="Dynamicland" class="inline" style="width: 10em; height:1em;">
                 </h3>
-                <div class="cell-desc">Towards a humane dynamic medium</div>
+                <div class="cell-desc">A humane dynamic medium, in progress</div>
             </a>
             <a href="https://joshuahhh.com/projects/pane/" class="text-inherit">
                 <img src="img-pane.png" alt="PANE" width="100%" class="mx-auto illus-img-border aspect-video object-cover">
                 <h3>PANE</h3>
                 <div class="cell-desc">Programming with visible data</div>
             </a>
+            <a href="https://joshuahhh.com/projects/pane/" class="text-inherit">
+                <img src="img-relat.png" alt="PANE" width="100%" class="mx-auto illus-img-border aspect-video object-cover">
+                <h3>Relat</h3>
+                <div class="cell-desc">A relational language embedded in JS</div>
+            </a>
         </div>
     </div>
-    <div class="narrower">
-        <h2>Media</h2>
-        <p>I like using computers to re-arrange things.</p>
-    </div>
-    <div class="wider">
+    <div class="center-col-with-heading">
+        <div class="heading">
+            <h2>Media</h2>
+            <p>Re-arranging human creations & the natural world with computers</p>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-6 sm:mb-4">
-            <a href="https://joshuahhh.com/599d-project1/" class="text-inherit">
+            <a href="TODO" class="text-inherit">
                 <img src="img-scrollscape.png" alt="Video Croquet screenshot" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
                 <h3>Scrollscape</h3>
                 <div class="cell-desc">Scrollable two-dimensional documents</div>
             </a>
+            <a href="TODO" class="text-inherit">
+                <img src="img-citespecific.png" alt="Video Croquet screenshot" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
+                <h3>Citespecific</h3>
+                <div class="cell-desc">Literature review on a free-form canvas</div>
+            </a>
             <a href="https://joshuahhh.com/video-croquet/" class="text-inherit">
                 <img src="img-video-croquet.png" alt="Video Croquet screenshot" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
                 <h3>Video Croquet 3000</h3>
-                <div class="cell-desc">Rolling balls around videos</div>
+                <div class="cell-desc">Putting balls on top of videos</div>
             </a>
             <a href="https://joshuahhh.com/projects/caltrain/" class="text-inherit">
                 <img src="img-caltrain.png" alt="Strava Atlas screenshot" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
                 <h3>Caltrain Camera Array</h3>
                 <div class="cell-desc">Impossible perspectives from a cell-phone video</div>
             </a>
+            <a href="https://joshuahhh.com/projects/metropopulous/" class="text-inherit">
+                <img src="img-metropopulous.png" alt="Strava Atlas screenshot" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
+                <h3>Ranking America's Metropolises</h3>
+                <div class="cell-desc">Visualization of population across scales</div>
+            </a>
+            <a href="https://joshuahhh.com/projects/metropopulous/" class="text-inherit">
+                <img src="img-conceptviz.png" alt="Strava Atlas screenshot" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
+                <h3>Gallery of Concept Visualization</h3>
+                <div class="cell-desc">Curated visualizations of complex ideas</div>
+            </a>
+            <a href="https://joshuahhh.com/projects/metropopulous/" class="text-inherit">
+                <img src="img-whiteboard-stitch.png" alt="Strava Atlas screenshot" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
+                <h3>whiteboard-stitch</h3>
+                <div class="cell-desc">Archiving collages with computational photography</div>
+            </a>
         </div>
     </div>
-    <div class="narrower">
-        <h2>Mapping</h2>
-        <p>Maps combine, miraculously, my nerdy love of geometry with my robust, muscular love of going outside.</p>
-    </div>
-    <div class="wider">
+    <div class="center-col-with-heading">
+        <div class="heading">
+            <h2>Mapping</h2>
+            <p>Geometry + going outside</p>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-6 sm:mb-4">
             <a href="https://strava-atlas.herokuapp.com/" class="text-inherit">
                 <img src="img-atlas.png" alt="Strava Atlas screenshot" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
@@ -129,13 +156,24 @@
             </a>
         </div>
     </div>
-    <div class="narrower">
-        <h2>That's it</h2>
-        <p>My <a href="index-2020.html">older site</a> has some older projects.</p>
-        <p>
-            Mastodon: <a href="https://assemblag.es/@qualmist">@qualmist@assemblag.es</a>.
-        </p>
-        <p>Thanks for visiting!</p>
+    <div class="center-col-with-heading">
+        <div class="heading">
+            <h2>Other</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-6 sm:mb-4">
+            <a href="https://strava-atlas.herokuapp.com/" class="text-inherit">
+                <img src="img-epipen.png" alt="EpiPEn table" width="100%" class="illus-img-border mx-auto aspect-video object-cover">
+                <h3>EpiPEn</h3>
+                <div class="cell-desc"><u>Epi</u>stemic <u>P</u>rogramming <u>En</u>vironment</div>
+            </a>
+            <div>
+                <p>My <a href="index-2020.html">older site (2020)</a> has an assortment of other projects.</p>
+            </div>
+        </div>
+    </div>
+    <div class="center-col-with-heading">
+        <h2>That's it!</h2>
+        <p>Thanks for visiting.</p>
     </div>
 </body>
 </html>

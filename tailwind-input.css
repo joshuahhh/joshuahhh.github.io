@@ -33,7 +33,7 @@ a:hover, a:focus, a:active {
 }
 
 h2 {
-  @apply text-3xl font-bold mt-8 mb-4;
+  @apply text-3xl font-bold mb-4;
 }
 
 h3 {
@@ -44,10 +44,15 @@ h3 {
   @apply italic;
 }
 
-.narrower {
+.center-col {
   @apply mx-auto max-w-2xl;
 }
 
-.wider {
-  @apply mx-auto max-w-3xl;
+.center-col-with-heading {
+  @apply mx-auto max-w-2xl relative mt-10;
+}
+
+.heading {
+  /* @apply absolute left-0 text-right -translate-x-full w-72 */
+  @apply xl:text-right xl:absolute xl:-left-64 xl:w-56
 }
