@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Home page of Josh Horowitz, UW PhD researcher">
+
+    <title>Citespecific</title>
+
+    <link rel="stylesheet" href="/tailwind.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet">
+    <script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+<body class="pt-4 px-4 sm:px-8">
+    <div class="center-col">
+        <p><a href="/">← Josh Horowitz</a></p>
+        <header class="py-8 text-center sm:text-left text-4xl sm:text-4xl font-extrabold">
+            Citespecific
+            <h3>Literature review on a free-form canvas</h3>
+        </header>
+
+        <p>
+            How might literature review – an intentional, creative, collaborative process – be supported by a digital workspace?
+            Following the theme of two-dimensional organization that I explored in <a href="/projects/scrollscape/">Scrollscape</a>, I built a canvas-based web application for literature review called Citespecific.
+        </p>
+        <p>
+            Copy text from webpages or documents with buried DOI/s2id identifiers.
+            Paste it into Citespecific.
+            An icon for each paper will be added to the canvas.
+            Papers can be freely rearranged.
+            References are shown as arrows.
+            When a paper is selected, links to the paper’s Semantic Scholar page and (sometimes) PDF are visible.
+        </p>
+        <p>
+            Citespecific is two-dimensional and shows references as connections.
+            But it’s not supposed to be an algorithmically-generated visualization with balls springing around all over the place:
+        </p>
+        <p class="flex justify-center items-center gap-4">
+            not this → <img src="not-this.png" alt="Algorithmically-generated visualization with balls" class="w-1/2">
+        </p>
+        <p>
+            Rather, Citespecific is supposed to be a thinking space where a researcher (or team) can grow their understanding of the literature alongside a durable, annotated map.
+        </p>
+        <p>
+            Citespecific is built with tldraw, an open-source drawing app. Using tldraw means Citespecific provides an infinite canvas for papers to live on, together with standard drawing tools like shapes, arrows, and text.
+        </p>
+        <p>
+            Three examples of maps made with Citespecific:
+        </p>
+        <div class="flex justify-center gap-8 items-end my-8 sm:my-6 flex-wrap">
+            <a href="https://joshuahhh.com/citespecific/?load=examples/599d.tldr" style="flex: 0 0 45%">
+                <img src="screenshot-599d.png" alt="Screenshot of Citespecific" class="mx-auto shadow-lg">
+                <div class="text-center mt-4">Papers from 599D sorted into categories</div>
+            </a>
+            <a href="https://joshuahhh.com/citespecific/?load=examples/engraft.tldr" style="flex: 0 0 40%">
+                <img src="screenshot-engraft.png" alt="Screenshot of Citespecific" class="mx-auto shadow-lg">
+                <div class="text-center mt-4">The Venn diagram from my Engraft paper</div>
+            </a>
+            <a href="https://joshuahhh.com/citespecific/?load=examples/venues.tldr" style="flex: 0 0 45%">
+                <img src="screenshot-venues.png" alt="Screenshot of Citespecific" class="mx-auto shadow-lg">
+                <div class="text-center mt-4">Looking at where papers are published</div>
+            </a>
+        </div>
+
+        <p class="italic">I made Scrollscape for an assignment in <a href="https://uwdata.github.io/future-scholarly-communication/22au/">CSE 599D</a>.</p>
+    </div>
+</body>
+</html>

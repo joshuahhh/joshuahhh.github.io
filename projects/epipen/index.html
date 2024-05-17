@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Home page of Josh Horowitz, UW PhD researcher">
+
+    <title>EpiPEn</title>
+
+    <link rel="stylesheet" href="/tailwind.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet">
+    <script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+<body class="pt-4 px-4 sm:px-8">
+    <div class="center-col">
+        <p><a href="/">← Josh Horowitz</a></p>
+        <header class="py-8 text-center sm:text-left text-4xl sm:text-4xl font-extrabold">
+            EpiPEn
+            <h3><u>Epi</u>stemic <u>P</u>rogramming <u>En</u>vironment</h3>
+        </header>
+
+        <!-- TODO: intro, paper, code, slides, footer -->
+
+        <p>
+            EpiPEn is a Python library for expressing and solving epistemic puzzles – puzzles that require reasoning about knowledge and ignorance.
+            For example, take this puzzle:
+        </p>
+        <p>
+            <blockquote class="ml-6">
+                Anne and Bill are told the following:
+                “I have two natural numbers.
+                They are consecutive numbers.
+                I am going to whisper one of these numbers to Anne and the other number to Bill.”
+                This happens.
+                Anne and Bill then have the following conversation:
+                <blockquote class="ml-6">
+                    Anne: “I don’t know your number.”<br>
+                    Bill: “I don’t know your number.”<br>
+                    Anne: “I know your number.”<br>
+                    Bill: “I know your number.”
+                </blockquote>
+                How is this possible? What are their numbers?
+            </blockquote>
+        </p>
+        <p>
+            With EpiPEn, you can express and solve this puzzle like this:
+        </p>
+        <p>
+        <pre class="bg-gray-100 p-4 rounded-lg">
+from epipen import *
+from z3 import *
+
+start_story()
+Anne, Bill = Characters('Anne Bill')
+A, B = Ints('A B')
+
+announce(storyteller,
+    And(A >= 0, B >= 0,
+        Or(A == B + 1, B == A + 1)))
+learn_constant(Anne, A)
+learn_constant(Bill, B)
+
+announce(Anne, Not(know(value_of=B)))
+announce(Bill, Not(know(value_of=A)))
+announce(Anne, know(value_of=B))
+announce(Bill, know(value_of=A))
+
+print_possible_worlds()</pre>
+        </p>
+        <p>
+            Pulling this off requires a novel encoding of epistemic logic in first-order logic and some embedded-DSL shenanigans.
+            Pretty neat!
+        </p>
+
+        <p>Read more about Relat in:</p>
+
+        <div class="grid grid-cols-2 gap-8 items-end my-8 sm:my-6">
+            <a href="epipen-paper.pdf">
+                <img src="img-paper.png" alt="EpiPEn paper thumbnail" class="mx-auto shadow-lg">
+                <div class="text-center mt-4">The paper</div>
+            </a>
+            <a href="https://docs.google.com/presentation/d/1vKnds4eO2UWhvyEuwYbP9y20cmopAlzmoqokYmLYmsE/edit">
+                <img src="img-slides.png" alt="EpiPEn slideshow thumbnail" class="mx-auto shadow-lg">
+                <div class="text-center mt-4">The slides</div>
+            </a>
+        </div>
+
+        <p>And if you're feeling adventurous, try out <a href="TODO">the library</a>.</p>
+
+        <p class="italic">
+            EpiPEn was my final project for <a href="https://courses.cs.washington.edu/courses/cse507/21au/">CSE 507</a>.
+            It was a collaboration with Jack Zhang.
+        </p>
+    </div>
+</body>
+</html>

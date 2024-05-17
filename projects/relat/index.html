@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Home page of Josh Horowitz, UW PhD researcher">
+
+    <title>Relat</title>
+
+    <link rel="stylesheet" href="/tailwind.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet">
+    <script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+<body class="pt-4 px-4 sm:px-8">
+    <div class="center-col">
+        <p><a href="/">← Josh Horowitz</a></p>
+        <header class="py-8 text-center sm:text-left text-4xl sm:text-4xl font-extrabold">
+            Relat
+            <h3>Relational Programming in JavaScript</h3>
+        </header>
+
+        <p>
+            Relational programming is typically only used when querying large databases outside a program, such as with SQL.
+            But the relational paradigm could be useful in many different contexts if it were more tightly integrated into a conventional, general-purpose language, operating on runtime data.
+        </p>
+
+        <p>This requires:</p>
+
+        <ol class="list-decimal ml-6">
+            <li>A query engine that runs inside the programming-language host.</li>
+            <li>A compact, expressive relational language.</li>
+            <li>A way of reinterpreting data between between the host language and the relational language without tedious boilerplate.</li>
+        </ol>
+
+        <p>
+            Relat is an integration of relational programming into JavaScript satisfying these requirements.
+        </p>
+
+        <p>Read more about Relat in:</p>
+
+        <div class="grid grid-cols-2 gap-8 items-end my-8 sm:my-6">
+            <a href="relat-paper.pdf">
+                <img src="img-paper.png" alt="Relat paper thumbnail" class="mx-auto shadow-lg">
+                <div class="text-center mt-4">The paper</div>
+            </a>
+            <a href="relat-poster.pdf">
+                <img src="img-poster.png" alt="Relat poster thumbnail" class="mx-auto shadow-lg">
+                <div class="text-center mt-4">The poster</div>
+            </a>
+        </div>
+
+        <p>And when you're ready, try:</p>
+
+        <div class="my-8 sm:my-6">
+            <a href="/relat">
+                <img src="relat-interface.png" alt="Relat screenshot" class="mx-auto">
+                <div class="text-center">The demo</div>
+            </a>
+        </div>
+
+        <p>Relat was my final project for <a href="https://courses.cs.washington.edu/courses/cse544/24wi/">CSE 544</a>.</p>
+    </div>
+</body>
+</html>
