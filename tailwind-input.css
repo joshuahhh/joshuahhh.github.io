@@ -5,7 +5,7 @@
 
 body {
   font-family: "Libre Baskerville", "PT Serif", Georgia, "Times New Roman", serif;
-  @apply bg-white text-stone-900 m-0 text-base;
+  @apply bg-white text-stone-900 m-0 text-base mb-24;
 }
 
 p, ul {
@@ -25,11 +25,15 @@ li {
 }
 
 a {
-  @apply text-[#0074D9] no-underline;
+  @apply text-blue-500 no-underline;
 }
 
 a:hover, a:focus, a:active {
-  @apply text-[#208054] no-underline border-none;
+  @apply text-blue-500 no-underline border-none;
+}
+
+a:hover img.border {
+  @apply border-blue-500;
 }
 
 h2 {
