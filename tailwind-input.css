@@ -32,7 +32,11 @@ a:hover, a:focus, a:active {
   @apply text-blue-500 no-underline border-none;
 }
 
-a:hover img.border {
+img.project-image {
+  @apply mx-auto aspect-video object-cover border;
+}
+
+a:hover img.project-image {
   @apply border-blue-500;
 }
 
