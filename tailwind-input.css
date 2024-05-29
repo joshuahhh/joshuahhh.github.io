@@ -63,5 +63,5 @@ h3 {
 
 .heading {
   /* @apply absolute left-0 text-right -translate-x-full w-72 */
-  @apply xl:text-right xl:absolute xl:-left-72 xl:w-56
+  @apply text-center sm:text-left xl:text-right xl:absolute xl:-left-72 xl:w-56
 }
