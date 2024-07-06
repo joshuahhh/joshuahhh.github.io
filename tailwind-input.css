@@ -38,6 +38,11 @@ img.project-image {
 
 a:hover img.project-image {
   @apply border-blue-500;
+  /* filter: grayscale(100%) sepia(100%) hue-rotate(180deg); */
+}
+
+a:hover img {
+  filter: url('#hyperlink');
 }
 
 h2 {
@@ -50,6 +55,10 @@ h3 {
 
 .cell-desc {
   @apply italic text-gray-600;
+}
+
+a:hover .cell-desc {
+  @apply text-inherit;
 }
 
 .center-col {
