@@ -1,3 +1,3 @@
 #!/bin/sh
 
-npx tailwindcss --input tailwind-input.css --output tailwind.css --watch --minify
+npx tailwindcss@3 --input tailwind-input.css --output tailwind.css --watch --minify
