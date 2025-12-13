@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-  font-family: "Libre Baskerville", "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: "Libre Baskerville", "PT Serif", Georgia, "Times New Roman",
+    serif;
   @apply bg-white text-stone-900 m-0 text-base mb-24;
 }
 
-p, ul {
+p,
+ul {
   @apply mb-6 sm:mb-4;
 }
 
@@ -25,10 +26,12 @@ li {
 }
 
 a {
-  @apply text-blue-500 no-underline;
+  @apply text-blue-600 no-underline;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   @apply text-blue-500 no-underline border-none;
 }
 
@@ -37,7 +40,7 @@ img.project-image {
 }
 
 a:hover img {
-  filter: url('#hyperlink');
+  filter: url("#hyperlink");
 }
 
 h2 {
@@ -67,5 +70,17 @@ a:hover .cell-desc {
 
 .heading {
   /* @apply absolute left-0 text-right -translate-x-full w-72 */
-  @apply text-center sm:text-left xl:text-right xl:absolute xl:-left-72 xl:w-56
+  @apply text-center sm:text-left xl:text-right xl:absolute xl:-left-72 xl:w-56;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
