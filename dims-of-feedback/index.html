@@ -1,49 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Home page of Josh Horowitz, UW PhD researcher"
+    />
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Home page of Josh Horowitz, UW PhD researcher">
+    <title>Technical Dimensions of Live Feedback in Programming Systems</title>
 
-    <title>Technical Dimensions of Feedback in Live Programming Systems</title>
+    <link rel="stylesheet" href="/tailwind.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      async
+      defer
+      data-domain="joshuahhh.com"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+  </head>
 
-    <link rel="stylesheet" href="/tailwind.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap" rel="stylesheet">
-    <script async defer data-domain="joshuahhh.com" src="https://plausible.io/js/plausible.js"></script>
-</head>
+  <body class="pt-4 px-4 sm:px-8">
+    <div class="center-col-narrow">
+      <p><a href="/">← Josh Horowitz</a></p>
+      <header class="py-8 text-center text-4xl font-extrabold">
+        Technical Dimensions of <br class="max-sm:hidden" />
+        <span class="sm:text-6xl sm:inline-block sm:py-2">Live Feedback</span>
+        <br class="max-sm:hidden" />
+        in Programming Systems
+      </header>
 
-<body class="pt-4 px-4 sm:px-8">
-    <div class="center-col">
-        <p><a href="/">← Josh Horowitz</a></p>
-        <header class="py-8 text-center sm:text-left text-4xl sm:text-4xl font-extrabold">
-            Technical Dimensions of Feedback in Live Programming Systems
-        </header>
+      <p class="flex justify-center">
+        <img
+          src="dims-of-feedback.png"
+          alt="Dimensions of feedback in live programming systems"
+          class="max-w-xl min-w-0 px-4"
+        />
+      </p>
 
-        <p>
-            <div style="position:relative;width:100%;padding-bottom:56.25%">
-                <iframe
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                    width="560" height="315" src="https://www.youtube.com/embed/lTh8BwoSlnM?si=0rFMDiunltFM199w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                ></iframe>
-            </div>
-        </p>
+      <p class="italic">
+        While live feedback plays an important role in many interactive
+        programming systems, its design space remains largely unmapped, making
+        it difficult to discuss and build on the wide range of designs explored
+        by past systems. As a first step towards establishing this map, we
+        present six dimensions that can be used to characterize and evaluate
+        live feedback in programming systems: <b>granularity</b>,
+        <b>reactivity</b>, <b>velocity</b>, <b>moldability</b>,
+        <b>bidirectionality</b>, and <b>materiality</b>.
+      </p>
 
-        <p>
-            Starting to map out dimensions of variation in how
-            feedback is provided by live programming
-            systems. Presented at LIVE 2024.
-        </p>
+      <p>
+        Presented at
+        <a href="https://2026.plateau-workshop.org/">PLATEAU 2026</a>:
+        <a
+          href="dims-of-feedback.pdf"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >PDF</a
+        >
+        <a
+          href="https://doi.org/10.1184/R1/31814011"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >DOI</a
+        >
+        <a
+          href="https://www.youtube.com/watch?v=tZAv-xC0iEw"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >Video</a
+        >
+      </p>
 
-        <p>
-            See also:
-            <a href="dims-of-feedback-live-2024.pdf">PDF slides</a>,
-            <a href="https://anonymous.4open.science/api/repo/liveness-paper-live-2024-anonymous-5661/file/Definitions%20and%20Dimensions%20of%20Liveness.html?v=13e25d9a">Rough essay submission</a>.
-        </p>
+      <p>
+        Based on an earlier presentation at
+        <a href="https://liveprog.org/live-2024">LIVE 2024</a>:
+        <a
+          href="https://www.youtube.com/watch?v=lTh8BwoSlnM"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >Video</a
+        >
+      </p>
 
-        <p class="flex justify-center">
-            <img src="dims-of-feedback.png" alt="Dimensions of feedback in live programming systems" class="pt-24 max-w-xl min-w-0 px-4">
-        </p>
+      <p>
+        This work was featured on
+        <a href="https://feelingof.com/episodes/080/">
+          Episode 80 of the Feeling of Computing Podcast
+          <img
+            src="feeling-of-computing.png"
+            alt="Feeling of Computing"
+            class="inline"
+            style="width: 2em; height: 2em" /></a
+        >. I make a surprise appearance! (It was a surprise for me.)
+      </p>
     </div>
-</body>
+  </body>
 </html>
