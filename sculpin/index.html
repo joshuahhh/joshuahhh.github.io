@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Home page of Josh Horowitz, UW PhD researcher"
+    />
+
+    <title>Sculpin</title>
+
+    <link rel="stylesheet" href="/tailwind.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      async
+      defer
+      data-domain="joshuahhh.com"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+  </head>
+
+  <body class="pt-4 px-4 sm:px-8">
+    <div class="center-col-narrow">
+      <p><a href="/">← Josh Horowitz</a></p>
+      <header class="py-8 text-center font-extrabold">
+        <div class="text-6xl py-2">Sculpin</div>
+        <div class="text-lg">Direct-Manipulation Transformation of JSON</div>
+      </header>
+
+      <p class="flex justify-center">
+        <img src="sculpin.png" alt="Sculpin" class="max-w-xl min-w-0 px-4" />
+      </p>
+
+      <p>
+        Presented at
+        <a href="https://sigchi.org/events/uist-2025/">UIST 2025</a>:
+        <a
+          href="sculpin.pdf"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >PDF</a
+        >
+        <a
+          href="https://dl.acm.org/doi/abs/10.1145/3746059.3747651"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >DOI</a
+        >
+        <a
+          href="https://www.youtube.com/watch?v=pzyrcKuR6iY"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >Video</a
+        >
+      </p>
+
+      <p class="italic text-justify hyphens-auto">
+        Many end-user programming tasks require programmatically processing
+        JSON, wrangling it from one format to another or building interactive
+        applications atop it. But end-users are impeded by the indirectness and
+        steep learning curve of textual code. We present <b>Sculpin</b>, a
+        direct-manipulation environment supporting a broad range of
+        JSON-transformation tasks. A user of Sculpin transforms JSON data step
+        by step, recording a program in the process. Sculpin makes three design
+        commitments to ensure directness and versatility: (1) steps are small
+        and precise, not inferred; (2) steps are general-purpose and open to
+        re-appropriation; (3) steps operate on JSON itself, rather than on a
+        limited intermediate representation. To support these commitments,
+        Sculpin introduces a mechanism of sculptable selections: the user can
+        direct their action by guiding a selection on top of the data through
+        small steps like generalization and hierarchical navigation. Sculpin
+        also extends JSON with embedded interface elements like form inputs and
+        buttons, allowing applications to be sculpted incrementally from source
+        data. We demonstrate the breadth and directness of Sculpin in use-cases
+        ranging from wrangling data to building applications. We evaluate
+        Sculpin through a heuristic analysis, situating it in a broad space of
+        programming systems and surfacing limitations such as difficulties
+        editing preexisting programs.
+      </p>
+    </div>
+  </body>
+</html>
