@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ShellVis: Sandboxed Live Programming for Shell Scripts</title>
+
+    <link rel="stylesheet" href="/tailwind.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      async
+      defer
+      data-domain="joshuahhh.com"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+  </head>
+
+  <body class="pt-4 px-4 sm:px-8">
+    <div class="center-col-narrow">
+      <p><a href="/">← Josh Horowitz</a></p>
+      <header class="py-8 text-center font-extrabold">
+        <div class="text-6xl py-2">ShellVis</div>
+        <div class="text-lg">Sandboxed Live Programming for Shell Scripts</div>
+      </header>
+
+      <p class="flex justify-center">
+        <img src="shellvis.png" alt="ShellVis" class="max-w-xl min-w-0 px-4" />
+      </p>
+
+      <p>
+        <!-- Posted to arXiv: -->
+        <a
+          href="shellvis.pdf"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >PDF</a
+        >
+        <a
+          href="paper/"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >HTML</a
+        >
+        <!-- <a
+          href=""
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >DOI (arXiv)</a
+        > -->
+        <a
+          href="https://www.youtube.com/watch?v=u-ipMyzEABE"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >Video</a
+        >
+        <a
+          href="https://github.com/joshuahhh/shellvis"
+          class="inline-block text-xs font-semibold px-1.5 py-0.5 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 no-underline mx-0.5 [vertical-align:0.2em]"
+          >Code</a
+        >
+      </p>
+
+      <p class="italic text-justify hyphens-auto">
+        Live programming provides visibility to programmers by running and
+        tracing programs as they are edited. However, for programs with
+        potentially harmful side effects, liveness can turn mistakes into
+        disasters. We propose enabling live programming in environments with
+        side effects via sandboxing: confining effects to a simulation of the
+        true environment. We apply <b>sandboxed live programming</b> in the
+        challenging context of shell scripting: a ubiquitous and powerful---yet
+        notoriously opaque and error-prone---tool. <b>ShellVis</b> provides
+        line-by-line feedback on a shell script's run-time behavior, with file
+        operations sandboxed via a safe overlay of the file system. A
+        qualitative user evaluation finds ShellVis to be helpful to
+        participants, replacing tedious existing practices and instilling
+        confidence. Participant responses also reveal areas for future research,
+        particularly bridging the gulf of execution alongside the gulf of
+        evaluation. ShellVis serves as a case study of how sandboxing can bring
+        live-programming techniques into the many real-world programming
+        contexts where side effects are important.
+      </p>
+    </div>
+  </body>
+</html>
