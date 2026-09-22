@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n tailwind,server \"npm:dev:tailwind\" \"npm:dev:server\"",
+    "dev:tailwind": "tailwindcss --input tailwind-input.css --output tailwind.css --watch --minify",
+    "dev:server": "live-server --no-browser"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5",
+    "live-server": "^1.2.2",
+    "tailwindcss": "^3.4.19"
+  }
+}
