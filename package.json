@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "concurrently -n tailwind,server \"npm:dev:tailwind\" \"npm:dev:server\"",
+    "dev": "concurrently -n tailwind,server \"pnpm:dev:tailwind\" \"pnpm:dev:server\"",
     "dev:tailwind": "tailwindcss --input tailwind-input.css --output tailwind.css --watch --minify",
     "dev:server": "browser-sync start --server --watch --ignore node_modules --no-open --no-notify --no-ui"
   },
@@ -9,5 +9,6 @@
     "browser-sync": "^3.0.4",
     "concurrently": "^10.0.5",
     "tailwindcss": "^3.4.19"
-  }
+  },
+  "packageManager": "pnpm@9.12.0"
 }
